@@ -8,9 +8,17 @@ namespace VisitorsPlacementTool
 {
     public class Visitor
     {
+        public int VisitorId;
         public string Name;
         public int Age;
-        public bool Adult;
+        public bool IsAdult;
+        public int seatNumber;
+        public int MinimumAge = 13;
+        public Visitor()
+        {
+
+        }
+
         public Visitor(string Name, int Age)
         {
             this.Name = Name;
@@ -18,19 +26,37 @@ namespace VisitorsPlacementTool
         }
 
         // Age check
-        public void CheckIfAdult(Visitor bezoeker)
+        public void CheckIfAdult(Visitor visitor)
         {
-            if(Age > 12)
+            if (visitor.Age < MinimumAge)
             {
-                Console.WriteLine(bezoeker.Name + " is an adult");
-                bezoeker.Adult = true;
+                Console.WriteLine(visitor.Name + " is not adult");
+                visitor.IsAdult = false;
             }
             else
             {
-                Console.WriteLine(bezoeker.Name + " is not adult");
-                bezoeker.Adult = false;
+                Console.WriteLine(visitor.Name + " is an adult");
+                visitor.IsAdult = true;
             }
         }
 
+        // Register visitor
+        public void Register(Visitor visitor)
+        {
+            List<Visitor> RegisteredVisitors = new List<Visitor>();
+            RegisteredVisitors.Add(visitor);
+            Console.WriteLine(visitor.Name + " is succesfully registered \n");
+        }
+
+        // Give seat number
+        public bool PlaceVisitors(List<Visitor> ListOfAllVisitors)
+        {
+            foreach (var visitor in ListOfAllVisitors)
+            {
+                seatNumber++;
+                Console.WriteLine(visitor.Name + " has given seat number " + seatNumber);
+            }
+            return true;
+        }
     }
 }
