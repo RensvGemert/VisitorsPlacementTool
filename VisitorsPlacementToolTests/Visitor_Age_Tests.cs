@@ -18,7 +18,7 @@ namespace VisitorsPlacementTool.Tests
             Visitor visitor = new Visitor("Rens", 13);
 
             // act
-            bool isAdult = visitor.CheckIfAdult(visitor);
+            bool isAdult = visitor.CheckIfAdult();
 
             // assert
             Assert.IsTrue(isAdult);
@@ -31,7 +31,7 @@ namespace VisitorsPlacementTool.Tests
             Visitor visitor = new Visitor("Rens", 12);
 
             // act
-            bool isAdult = visitor.CheckIfAdult(visitor);
+            bool isAdult = visitor.CheckIfAdult();
 
             // assert
             Assert.IsFalse(isAdult);

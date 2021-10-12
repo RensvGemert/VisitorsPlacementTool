@@ -27,16 +27,16 @@ namespace VisitorsPlacementTool
         }
 
         // Age check
-        public bool CheckIfAdult(Visitor visitor)
+        public bool CheckIfAdult()
         {
-            if (visitor.Age < MinimumAge)
+            if (this.Age < MinimumAge)
             {
-                Console.WriteLine(visitor.Name + " is not adult");
+                Console.WriteLine(this.Name + " is not adult");
                 return false;
             }
             else
             {
-                Console.WriteLine(visitor.Name + " is an adult");
+                Console.WriteLine(this.Name + " is an adult");
                 return true;
             }
         }
