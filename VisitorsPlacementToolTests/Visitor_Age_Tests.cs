@@ -18,10 +18,10 @@ namespace VisitorsPlacementTool.Tests
             Visitor visitor = new Visitor("Rens", 13);
 
             // act
-            visitor.CheckIfAdult(visitor);
+            bool isAdult = visitor.CheckIfAdult(visitor);
 
             // assert
-            Assert.IsTrue(visitor.IsAdult);
+            Assert.IsTrue(isAdult);
         }
 
         [TestMethod()]
@@ -31,10 +31,10 @@ namespace VisitorsPlacementTool.Tests
             Visitor visitor = new Visitor("Rens", 12);
 
             // act
-            visitor.CheckIfAdult(visitor);
+            bool isAdult = visitor.CheckIfAdult(visitor);
 
             // assert
-            Assert.IsFalse(visitor.IsAdult);
+            Assert.IsFalse(isAdult);
         }
     }
 }

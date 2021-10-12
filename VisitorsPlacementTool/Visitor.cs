@@ -11,13 +11,8 @@ namespace VisitorsPlacementTool
         public int VisitorId;
         public string Name;
         public int Age;
-        public bool IsAdult;
         public int seatNumber;
         public int MinimumAge = 13;
-        public Visitor()
-        {
-
-        }
 
         public Visitor(string Name, int Age)
         {
@@ -26,37 +21,18 @@ namespace VisitorsPlacementTool
         }
 
         // Age check
-        public void CheckIfAdult(Visitor visitor)
+        public bool CheckIfAdult(Visitor visitor)
         {
             if (visitor.Age < MinimumAge)
             {
                 Console.WriteLine(visitor.Name + " is not adult");
-                visitor.IsAdult = false;
+                return false;
             }
             else
             {
                 Console.WriteLine(visitor.Name + " is an adult");
-                visitor.IsAdult = true;
+                return true;
             }
-        }
-
-        // Register visitor
-        public void Register(Visitor visitor)
-        {
-            List<Visitor> RegisteredVisitors = new List<Visitor>();
-            RegisteredVisitors.Add(visitor);
-            Console.WriteLine(visitor.Name + " is succesfully registered \n");
-        }
-
-        // Give seat number
-        public bool PlaceVisitors(List<Visitor> ListOfAllVisitors)
-        {
-            foreach (var visitor in ListOfAllVisitors)
-            {
-                seatNumber++;
-                Console.WriteLine(visitor.Name + " has given seat number " + seatNumber);
-            }
-            return true;
         }
     }
 }

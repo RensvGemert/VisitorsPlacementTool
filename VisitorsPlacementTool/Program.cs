@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace VisitorsPlacementTool
 {
@@ -8,7 +9,6 @@ namespace VisitorsPlacementTool
         static void Main(string[] args)
         {
             List<Visitor> allVisitors = new List<Visitor>();
-            Visitor visitor = new Visitor();
             Visitor visitor1 = new Visitor("Rens", 23);
             Visitor visitor2 = new Visitor("Henk", 30);
             Visitor visitor3 = new Visitor("Klaas", 12);
@@ -19,13 +19,10 @@ namespace VisitorsPlacementTool
             allVisitors.Add(visitor3);
             allVisitors.Add(visitor4);
 
-            foreach(var person in allVisitors)
+            foreach (var visitor in allVisitors)
             {
-                person.CheckIfAdult(person);
-                person.Register(person);
+                visitor.CheckIfAdult(visitor);
             }
-
-            visitor.PlaceVisitors(allVisitors);
         }
     }
 }
