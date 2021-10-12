@@ -8,10 +8,12 @@ namespace VisitorsPlacementTool
     {
         static void Main(string[] args)
         {
-            Visitor visitor = new Visitor("Rens", 23);
-            Visitor visitor2 = new Visitor("Klaas", 11);
-            visitor.CheckIfAdult(visitor);
-            visitor2.CheckIfAdult(visitor2);
+            Evenement evenement = new Evenement("Ronde van Eindhoven", new DateTime(2021, 10, 12), 4, 5);
+
+            Console.WriteLine("Evenement: " + evenement.EvenementNaam);
+            Console.WriteLine("Datum: " + evenement.Datum.ToShortDateString());
+            Console.WriteLine("Aantal vakken: " + evenement.AantalVakken);
+            Console.WriteLine("Aantal stoelen: " + evenement.AantalStoelen);
         }
     }
 }
