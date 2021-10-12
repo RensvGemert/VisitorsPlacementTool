@@ -13,6 +13,12 @@ namespace VisitorsPlacementTool
         public int Age;
         public int seatNumber;
         public int MinimumAge = 13;
+        public Visitor(string Name, int Age, int VisitorId)
+        {
+            this.Name = Name;
+            this.Age = Age;
+            this.VisitorId = VisitorId;
+        }
 
         public Visitor(string Name, int Age)
         {
