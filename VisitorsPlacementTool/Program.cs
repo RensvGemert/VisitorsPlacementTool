@@ -9,11 +9,7 @@ namespace VisitorsPlacementTool
         static void Main(string[] args)
         {
             // Evenement aanmaken
-            Evenement evenement = new Evenement("Ronde van Eindhoven", new DateTime(2021, 10, 12), 4, 5);
-            Console.WriteLine("Evenement: " + evenement.EvenementNaam);
-            Console.WriteLine("Datum: " + evenement.Datum.ToShortDateString());
-            Console.WriteLine("Aantal vakken: " + evenement.AantalVakken);
-            Console.WriteLine("Aantal stoelen: " + evenement.AantalStoelen);
+
 
             // Visitors registreren en uniek ID toekennen
 
