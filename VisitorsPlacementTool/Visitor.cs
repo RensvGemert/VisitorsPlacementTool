@@ -12,7 +12,7 @@ namespace VisitorsPlacementTool
         public string Name;
         public int Age;
         public int seatNumber;
-        public int MinimumAge = 13;
+        public int MinimumAge = 12;
         public Visitor(string Name, int Age, int VisitorId)
         {
             this.Name = Name;
@@ -29,7 +29,7 @@ namespace VisitorsPlacementTool
         // Age check
         public bool CheckIfAdult()
         {
-            if (this.Age < MinimumAge)
+            if (this.Age <= MinimumAge)
             {
                 Console.WriteLine(this.Name + " is not adult");
                 return false;
