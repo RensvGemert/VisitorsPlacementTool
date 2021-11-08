@@ -8,10 +8,10 @@ namespace VisitorsPlacementTool
 {
     public class Evenement
     {    
-        public string EvenementNaam; // Ronde van Eindhoven
-        public DateTime Datum; // Datum van het evenement
+        public string EvenementNaam; 
+        public DateTime Datum;
         public int HuidigAantalBezoekers = 0;
-        public int MaxAantalBezoekers = 2;
+        public int MaxAantalBezoekers = 4;
 
         public Evenement(string EvenementNaam, DateTime Datum)
         {
@@ -28,8 +28,7 @@ namespace VisitorsPlacementTool
         public bool ZijnErPlekkenBeschikbaar()
         {
             if (HuidigAantalBezoekers < MaxAantalBezoekers)
-            {
-                Console.WriteLine("Er is nog plek voor " + AantalBezoekersWelkom() + " bezoeker(s)");
+            {             
                 return true;
             }
             return false;
