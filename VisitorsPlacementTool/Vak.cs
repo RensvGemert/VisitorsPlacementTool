@@ -8,6 +8,7 @@ namespace VisitorsPlacementTool
 {
     public class Vak
     {
+        public List<Vak> VakA = new List<Vak>();
         public string vakNaam; // vak A, B, C of D
         public int huidigAantalPlekken = 0;
         public int maximaalAantalPlekken = 10;

@@ -15,22 +15,10 @@ namespace VisitorsPlacementTool
 
             // Bezoekers
             Bezoeker bezoeker1 = new Bezoeker("bezoeker1", 23);
-            bezoeker1.IsKind();
 
             // Vak
-            Vak vak = new Vak("A");
-            Console.WriteLine(vak.vakNaam);
-            Console.WriteLine(vak.IsErPlekInVak());
-            Console.WriteLine(vak.PlaatsBezoekerInVak(bezoeker1));
-            Console.WriteLine(vak.huidigAantalPlekken);
-
-            // Rij
-            Rij rij = new Rij();
-
-            // Stoel
-            Stoel stoel = new Stoel();
-
-          
+            Vak vakA = new Vak("A");
+            vakA.PlaatsBezoekerInVak(bezoeker1);
         }
     }
 }
