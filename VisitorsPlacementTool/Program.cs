@@ -11,7 +11,7 @@ namespace VisitorsPlacementTool
             // Evenement
             Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today);
             Console.WriteLine(evenement.EvenementNaam);
-            Console.WriteLine(evenement.Datum.ToShortDateString() + "\n");
+            Console.WriteLine(evenement.Datum.ToShortDateString());
 
             // Bezoekers
             Bezoeker bezoeker1 = new Bezoeker("bezoeker1", 23);
@@ -46,21 +46,20 @@ namespace VisitorsPlacementTool
                 }              
             }
 
-            Console.WriteLine("Alle kinderen: ");
-            foreach (var kind in alleKinderen)
-            {
-                Console.WriteLine(kind.Naam);
-            }
+            //Console.WriteLine("Alle kinderen: ");
+            //foreach (var kind in alleKinderen)
+            //{
+            //    Console.WriteLine(kind.Naam);
+            //}
 
             // break
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Console.WriteLine("alle volwassenen: ");
-
-            foreach (var volwassene in alleVolwassene)
-            {
-                Console.WriteLine(volwassene.Naam);
-            }
+            //Console.WriteLine("alle volwassenen: ");
+            //foreach (var volwassene in alleVolwassene)
+            //{
+            //    Console.WriteLine(volwassene.Naam);
+            //}
 
             // Vak A 
             Vak vakA = new Vak("A");
