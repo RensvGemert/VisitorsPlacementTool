@@ -22,13 +22,11 @@ namespace VisitorsPlacementTool
         public bool IsKind()
         {
             if (this.Leeftijd <= MinimumLeeftijd)
-            {
-                Console.WriteLine(this.Naam + " is een kind");
+            {          
                 return true;
             }
             else
             {
-                Console.WriteLine(this.Naam + " is een volwassene");
                 return false;
             }
         }

@@ -9,8 +9,8 @@ namespace VisitorsPlacementTool
     public class Vak
     {
         public string vakNaam; // vak A, B, C of D
-        public int huidigAantalPlekken = 0;
-        public int maximaalAantalPlekken = 10;
+        public int huidigAantalPlekkenInVak = 0;
+        public int maximaalAantalPlekkenInVak = 10;
         public int rij = 1;
         public int stoelNummer = 1;
         
@@ -22,7 +22,7 @@ namespace VisitorsPlacementTool
 
         public bool IsErPlekInVak()
         {
-            if (huidigAantalPlekken < maximaalAantalPlekken)
+            if (huidigAantalPlekkenInVak < maximaalAantalPlekkenInVak)
             {
                 return true;
             }
@@ -34,10 +34,11 @@ namespace VisitorsPlacementTool
         {
             if(IsErPlekInVak() == true)
             {
-                Console.WriteLine(bezoeker.Naam + " word toegevoegd aan vak: " + this.vakNaam);
-                huidigAantalPlekken++;
+                //Console.WriteLine(bezoeker.Naam + " word toegevoegd aan vak: " + this.vakNaam);
+                huidigAantalPlekkenInVak++;
                 return true;
             }
+            VakZitVolBericht(bezoeker);
             return false;
         }
 
@@ -46,22 +47,28 @@ namespace VisitorsPlacementTool
         {
             if (PlaatsBezoekerInVak(bezoeker) == true)
             {
-                Console.WriteLine(bezoeker.Naam + " word toegevoegd aan rij: " + this.rij);
+                //Console.WriteLine(bezoeker.Naam + " word toegevoegd aan rij: " + this.rij);
                 return true;
             }
             return false;
         }
 
-        public bool PlaatsBezoekerOpStoel(Bezoeker bezoeker)
+        public bool PlaatsBezoeker(Bezoeker bezoeker)
         {
             if (PlaatsBezoekerInRij(bezoeker) == true)
             {
-                Console.WriteLine(bezoeker.Naam + " word toegevoegd aan stoelnummer: " + this.stoelNummer + "\n");
+                //Console.WriteLine(bezoeker.Naam + " word toegevoegd aan stoelnummer: " + this.stoelNummer + "\n");
+                Console.WriteLine(bezoeker.Naam + " Word geplaatst op stoel: " + vakNaam + rij + "-" +  stoelNummer);
                 stoelNummer++;
                 return true;
             }
             return false;
         }
 
+
+        public void VakZitVolBericht(Bezoeker bezoeker)
+        {
+            Console.WriteLine(bezoeker.Naam + " kan niet worden geplaatst omdat dit vak vol is.");
+        }
     }
 }
