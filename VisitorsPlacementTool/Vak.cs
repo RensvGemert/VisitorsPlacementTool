@@ -8,10 +8,11 @@ namespace VisitorsPlacementTool
 {
     public class Vak
     {
-        public List<Vak> VakA = new List<Vak>();
         public string vakNaam; // vak A, B, C of D
         public int huidigAantalPlekken = 0;
         public int maximaalAantalPlekken = 10;
+        public int rij = 1;
+        public int stoelNummer = 1;
         
 
         public Vak(string vakNaam)
@@ -28,6 +29,7 @@ namespace VisitorsPlacementTool
             return false;
         }
 
+       
         public bool PlaatsBezoekerInVak(Bezoeker bezoeker)
         {
             if(IsErPlekInVak() == true)
@@ -38,5 +40,28 @@ namespace VisitorsPlacementTool
             }
             return false;
         }
+
+
+        public bool PlaatsBezoekerInRij(Bezoeker bezoeker)
+        {
+            if (PlaatsBezoekerInVak(bezoeker) == true)
+            {
+                Console.WriteLine(bezoeker.Naam + " word toegevoegd aan rij: " + this.rij);
+                return true;
+            }
+            return false;
+        }
+
+        public bool PlaatsBezoekerOpStoel(Bezoeker bezoeker)
+        {
+            if (PlaatsBezoekerInRij(bezoeker) == true)
+            {
+                Console.WriteLine(bezoeker.Naam + " word toegevoegd aan stoelnummer: " + this.stoelNummer + "\n");
+                stoelNummer++;
+                return true;
+            }
+            return false;
+        }
+
     }
 }

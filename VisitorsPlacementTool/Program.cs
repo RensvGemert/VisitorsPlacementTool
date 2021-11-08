@@ -15,10 +15,13 @@ namespace VisitorsPlacementTool
 
             // Bezoekers
             Bezoeker bezoeker1 = new Bezoeker("bezoeker1", 23);
+            Bezoeker bezoeker2 = new Bezoeker("bezoeker2", 10);
 
             // Vak
             Vak vakA = new Vak("A");
-            vakA.PlaatsBezoekerInVak(bezoeker1);
+            vakA.PlaatsBezoekerOpStoel(bezoeker1);
+            vakA.PlaatsBezoekerOpStoel(bezoeker2);
+            
         }
     }
 }
