@@ -9,6 +9,5 @@ namespace VisitorsPlacementTool
     public class Rij
     {
         public int rijNummer;
-
     }
 }

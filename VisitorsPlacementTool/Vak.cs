@@ -34,7 +34,6 @@ namespace VisitorsPlacementTool
         {
             if(IsErPlekInVak() == true)
             {
-                //Console.WriteLine(bezoeker.Naam + " word toegevoegd aan vak: " + this.vakNaam);
                 huidigAantalPlekkenInVak++;
                 return true;
             }
@@ -47,7 +46,6 @@ namespace VisitorsPlacementTool
         {
             if (PlaatsBezoekerInVak(bezoeker) == true)
             {
-                //Console.WriteLine(bezoeker.Naam + " word toegevoegd aan rij: " + this.rij);
                 return true;
             }
             return false;
@@ -57,14 +55,12 @@ namespace VisitorsPlacementTool
         {
             if (PlaatsBezoekerInRij(bezoeker) == true)
             {
-                //Console.WriteLine(bezoeker.Naam + " word toegevoegd aan stoelnummer: " + this.stoelNummer + "\n");
                 Console.WriteLine(bezoeker.Naam + " Word geplaatst op stoel: " + vakNaam + rij + "-" +  stoelNummer);
                 stoelNummer++;
                 return true;
             }
             return false;
         }
-
 
         public void VakZitVolBericht(Bezoeker bezoeker)
         {

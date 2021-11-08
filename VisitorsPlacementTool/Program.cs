@@ -11,7 +11,7 @@ namespace VisitorsPlacementTool
             // Evenement
             Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today);
             Console.WriteLine(evenement.EvenementNaam);
-            Console.WriteLine(evenement.Datum.ToShortDateString() + "\n");        
+            Console.WriteLine(evenement.Datum.ToShortDateString() + "\n");
 
             // Bezoekers
             Bezoeker bezoeker1 = new Bezoeker("bezoeker1", 23);
@@ -52,21 +52,15 @@ namespace VisitorsPlacementTool
                 Console.WriteLine(kind.Naam);
             }
 
-            Console.WriteLine("\nalle volwassenen: ");
+            // break
+            Console.WriteLine();
+
+            Console.WriteLine("alle volwassenen: ");
 
             foreach (var volwassene in alleVolwassene)
             {
                 Console.WriteLine(volwassene.Naam);
             }
-
-            //List<Bezoeker> gesorteerdeLijst = new List<Bezoeker>();
-            //gesorteerdeLijst.AddRange(alleKinderen);
-            //gesorteerdeLijst.AddRange(alleVolwassene);
-
-            //foreach (var bezoeker in gesorteerdeLijst)
-            //{
-            //    Console.WriteLine(bezoeker.Naam + " " + bezoeker.Leeftijd);
-            //}
 
             // Vak A 
             Vak vakA = new Vak("A");
@@ -78,7 +72,15 @@ namespace VisitorsPlacementTool
             Console.WriteLine("Kinderen plaatsen: ");
             foreach (var bezoeker in alleKinderen)
             {
-                vakA.PlaatsBezoeker(bezoeker);
+                if (evenement.ZijnErPlekkenBeschikbaar() == true)
+                {
+                    vakA.PlaatsBezoeker(bezoeker);
+                    evenement.HuidigAantalBezoekers++;
+                }
+                else
+                {
+                    evenement.EvenementZitVolBericht();
+                }
             }
 
             // break
@@ -88,9 +90,16 @@ namespace VisitorsPlacementTool
             Console.WriteLine("Volwassenen plaatsen: ");
             foreach (var bezoeker in alleVolwassene)
             {
-                vakA.PlaatsBezoeker(bezoeker);
+                if (evenement.ZijnErPlekkenBeschikbaar() == true)
+                {
+                    vakA.PlaatsBezoeker(bezoeker);
+                    evenement.HuidigAantalBezoekers++;
+                }
+                else
+                {
+                    evenement.EvenementZitVolBericht();
+                }
             }
-
         }
     }
 }
