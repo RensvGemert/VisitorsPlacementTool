@@ -8,13 +8,16 @@ namespace VisitorsPlacementTool
     {
         static void Main(string[] args)
         {
-            // Evenement aanmaken
+            Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today);
+            Console.WriteLine(evenement.EvenementNaam);
+            Console.WriteLine(evenement.Datum.ToShortDateString() + "\n");
+
+            Bezoeker bezoeker1 = new Bezoeker("bezoeker1", 23);
+            bezoeker1.IsKind();
 
 
-            // Visitors registreren en uniek ID toekennen
 
 
-            // Visitors Plaatsen
 
         }
     }

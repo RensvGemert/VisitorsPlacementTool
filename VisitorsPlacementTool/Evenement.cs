@@ -10,14 +10,11 @@ namespace VisitorsPlacementTool
     {    
         public string EvenementNaam; // Ronde van Eindhoven
         public DateTime Datum; // Datum van het evenement
-        public int AantalVakken; // Aantal vakken beschikbaar
-        public int AantalStoelen; // Aantal stoelen beschikbaar (is ook max aantal bezoekers)
-        public Evenement(string EvenementNaam, DateTime Datum, int AantalVakken, int AantalStoelen)
+
+        public Evenement(string EvenementNaam, DateTime Datum)
         {
             this.EvenementNaam = EvenementNaam;
             this.Datum = Datum;
-            this.AantalVakken = AantalVakken;
-            this.AantalStoelen = AantalStoelen;
         }
     }
 }

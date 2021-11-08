@@ -9,32 +9,32 @@ using System.Threading.Tasks;
 namespace VisitorsPlacementTool.Tests
 {
     [TestClass()]
-    public class Visitor_Age_Tests
+    public class Bezoeker_Leeftijd_Tests
     {
         [TestMethod()]
         public void CheckIfAdultTest_Is_True()
         {
             // arrange
-            Visitor visitor = new Visitor("Rens", 13);
+            Bezoeker visitor = new Bezoeker("Rens", 13);
 
             // act
-            bool isAdult = visitor.CheckIfAdult();
+            bool isKind = visitor.IsKind();
 
             // assert
-            Assert.IsTrue(isAdult);
+            Assert.IsFalse(isKind);
         }
 
         [TestMethod()]
         public void CheckIfAdultTest_Is_False ()
         {
             // arrange
-            Visitor visitor = new Visitor("Rens", 12);
+            Bezoeker visitor = new Bezoeker("Rens", 12);
 
             // act
-            bool isAdult = visitor.CheckIfAdult();
+            bool isKind = visitor.IsKind();
 
             // assert
-            Assert.IsFalse(isAdult);
+            Assert.IsTrue(isKind);
         }
     }
 }
