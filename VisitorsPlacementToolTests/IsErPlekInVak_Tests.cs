@@ -24,7 +24,7 @@ namespace VisitorsPlacementTool.Tests
         public void IsErPlekInVakTest_IsFalse()
         {
             Vak vak = new Vak("B", 5, 5);
-            vak.huidigAantalBezoekersInVak = 5;
+            vak.aantalBezoekersInVak = 5;
 
             bool IsErPlek = vak.IsErPlekInVak();
             Assert.IsFalse(IsErPlek);

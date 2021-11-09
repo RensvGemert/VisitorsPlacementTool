@@ -18,7 +18,7 @@ namespace VisitorsPlacementTool.Tests
             Vak vak = new Vak("A", 5, 10);
 
             vak.PlaatsBezoekerInVak(bezoeker);
-            int aantalPlekkenBezet = vak.huidigAantalBezoekersInVak;
+            int aantalPlekkenBezet = vak.aantalBezoekersInVak;
 
             Assert.AreEqual(aantalPlekkenBezet, 1);
         }
@@ -31,7 +31,7 @@ namespace VisitorsPlacementTool.Tests
 
             vak.PlaatsBezoekerInVak(bezoeker);
             vak.PlaatsBezoekerInVak(bezoeker);
-            int aantalPlekkenBezet = vak.huidigAantalBezoekersInVak;
+            int aantalPlekkenBezet = vak.aantalBezoekersInVak;
 
             Assert.AreNotEqual(aantalPlekkenBezet, 1);
         }

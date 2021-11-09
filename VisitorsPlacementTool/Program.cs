@@ -47,7 +47,7 @@ namespace VisitorsPlacementTool
             }
 
             // Vak A 
-            Vak vakA = new Vak("A", 15, 3); // Vak "A", heeft maximaal 15 zitplaatsen en 5 stoelen per rij.
+            Vak vak = new Vak("A", 15, 5); // "(vakNaam)", (maxAantalBezoekersInVak), (aantalStoelenPerRij)
 
             // Kinderen plaatsen
             Console.WriteLine("Kinderen plaatsen: ");
@@ -55,7 +55,7 @@ namespace VisitorsPlacementTool
             {
                 if (evenement.ZijnErPlekkenBeschikbaar() == true)
                 {
-                    vakA.PlaatsBezoeker(bezoeker);
+                    vak.PlaatsBezoeker(bezoeker);
                     evenement.HuidigAantalBezoekers++;
                 }
                 else
@@ -70,7 +70,7 @@ namespace VisitorsPlacementTool
             {
                 if (evenement.ZijnErPlekkenBeschikbaar() == true)
                 {
-                    vakA.PlaatsBezoeker(bezoeker);
+                    vak.PlaatsBezoeker(bezoeker);
                     evenement.HuidigAantalBezoekers++;
                 }
                 else
@@ -78,6 +78,8 @@ namespace VisitorsPlacementTool
                     evenement.EvenementZitVolBericht();
                 }
             }
+
+            Console.ReadLine();
         }
     }
 }

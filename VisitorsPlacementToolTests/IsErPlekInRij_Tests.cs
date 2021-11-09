@@ -15,7 +15,7 @@ namespace VisitorsPlacementTool.Tests
         public void IsErPlekOpDezeRijTest_IsTrue()
         {
             Vak vakA = new Vak("A", 10, 3);
-            vakA.bezoekersOpDezeRij = 2;
+            vakA.aantalBezoekersOpDezeRij = 2;
 
             bool IsErPlekOpDezeRij = vakA.IsErPlekOpDezeRij();
 
@@ -26,7 +26,7 @@ namespace VisitorsPlacementTool.Tests
         public void IsErPlekOpDezeRijTest_IsFalse ()
         {
             Vak vakA = new Vak("A", 10, 3);
-            vakA.bezoekersOpDezeRij = 3;
+            vakA.aantalBezoekersOpDezeRij = 3;
 
             bool IsErPlekOpDezeRij = vakA.IsErPlekOpDezeRij();
 
