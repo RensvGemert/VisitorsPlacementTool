@@ -49,7 +49,6 @@ namespace VisitorsPlacementTool
             {
                 return true;
             }
-            rijNummer = 2;
             return false;
         }
 
@@ -60,7 +59,10 @@ namespace VisitorsPlacementTool
                 aantalBezoekersOpDezeRij++;
                 return true;
             }
-            Console.WriteLine(bezoeker.Naam + " moet worden geplaatst op rij " + rijNummer);
+            if(IsErPlekInVak() == true)
+            {
+                Console.WriteLine(bezoeker.Naam + " moet nog worden geplaatst in het vak");
+            }
             return false;
         }
 
@@ -77,7 +79,7 @@ namespace VisitorsPlacementTool
 
         public void VakZitVolBericht(Bezoeker bezoeker)
         {
-            Console.WriteLine(bezoeker.Naam + " kan niet worden geplaatst omdat dit vak vol is.");
+            Console.WriteLine(bezoeker.Naam + " kan niet worden geplaatst omdat dit vak vol zit. ");
         }
     }
 }

@@ -19,6 +19,9 @@ namespace VisitorsPlacementTool
             Bezoeker bezoeker3 = new Bezoeker("bezoeker3", 22);
             Bezoeker bezoeker4 = new Bezoeker("bezoeker4", 12);
             Bezoeker bezoeker5 = new Bezoeker("bezoeker5", 21);
+            Bezoeker bezoeker6 = new Bezoeker("bezoeker6", 15);
+            Bezoeker bezoeker7 = new Bezoeker("bezoeker7", 16);
+            Bezoeker bezoeker8 = new Bezoeker("bezoeker8", 17);
 
             // Lijst van alle bezoekers
             List<Bezoeker> alleBezoekers = new List<Bezoeker>();
@@ -27,6 +30,9 @@ namespace VisitorsPlacementTool
             alleBezoekers.Add(bezoeker3);
             alleBezoekers.Add(bezoeker4);
             alleBezoekers.Add(bezoeker5);
+            alleBezoekers.Add(bezoeker6);
+            alleBezoekers.Add(bezoeker7);
+            alleBezoekers.Add(bezoeker8);
 
             // Lijst van alle kinderen
             List<Bezoeker> alleKinderen = new List<Bezoeker>();
@@ -78,7 +84,6 @@ namespace VisitorsPlacementTool
                     evenement.EvenementZitVolBericht();
                 }
             }
-
             Console.ReadLine();
         }
     }
