@@ -53,7 +53,7 @@ namespace VisitorsPlacementTool
             }
 
             // Vak A 
-            Vak vak = new Vak("A", 15, 5); // "(vakNaam)", (maxAantalBezoekersInVak), (aantalStoelenPerRij)
+            Vak vak = new Vak("A", 6, 3); // "(vakNaam)", (maxAantalBezoekersInVak), (aantalStoelenPerRij)
 
             // Kinderen plaatsen
             Console.WriteLine("Kinderen plaatsen: ");

@@ -12,7 +12,7 @@ namespace VisitorsPlacementTool.Tests
     public class Bezoeker_Leeftijd_Tests
     {
         [TestMethod()]
-        public void CheckIfAdultTest_Is_True()
+        public void CheckIsKind_Is_False()
         {
             // arrange
             Bezoeker visitor = new Bezoeker("Rens", 13);
@@ -25,7 +25,7 @@ namespace VisitorsPlacementTool.Tests
         }
 
         [TestMethod()]
-        public void CheckIfAdultTest_Is_False ()
+        public void CheckIsKind_Is_True()
         {
             // arrange
             Bezoeker visitor = new Bezoeker("Rens", 12);
