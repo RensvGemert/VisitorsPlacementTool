@@ -8,25 +8,25 @@ namespace VisitorsPlacementTool
 {
     public class Vak
     {
-        public string vakNaam; // vak A, B, C of D
+        public string vakNaam;
         public int huidigAantalBezoekersInVak = 0;
-        public int maximaalAantalPlekkenInVak;
-        public int rijBreedte;
-        public int rij = 1;
+        public int maximaalAantalBezoekersInVak;
+        public int rijBreedte;       
         public int bezoekersOpDezeRij;
         public int stoelNummer = 1;
-        
+        public int rij = 1;
+
 
         public Vak(string vakNaam, int maximaalAantalPlekkenInVak, int rijBreedte)
         {
             this.vakNaam = vakNaam;
-            this.maximaalAantalPlekkenInVak = maximaalAantalPlekkenInVak;
+            this.maximaalAantalBezoekersInVak = maximaalAantalPlekkenInVak;
             this.rijBreedte = rijBreedte;
         }
 
         public bool IsErPlekInVak()
         {
-            if (huidigAantalBezoekersInVak < maximaalAantalPlekkenInVak)
+            if (huidigAantalBezoekersInVak < maximaalAantalBezoekersInVak)
             {
                 return true;
             }

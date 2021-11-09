@@ -18,7 +18,6 @@ namespace VisitorsPlacementTool
             this.Leeftijd = Leeftijd;
         }
 
-        // Age check
         public bool IsKind()
         {
             if (this.Leeftijd <= MinimumLeeftijd)
