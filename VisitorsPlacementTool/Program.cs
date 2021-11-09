@@ -47,7 +47,7 @@ namespace VisitorsPlacementTool
             }
 
             // Vak A 
-            Vak vakA = new Vak("A", 15, 5); // Vak "A", heeft maximaal 15 zitplaatsen en 5 stoelen per rij.
+            Vak vakA = new Vak("A", 15, 3); // Vak "A", heeft maximaal 15 zitplaatsen en 5 stoelen per rij.
 
             // Kinderen plaatsen
             Console.WriteLine("Kinderen plaatsen: ");

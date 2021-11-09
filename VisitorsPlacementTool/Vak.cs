@@ -9,10 +9,11 @@ namespace VisitorsPlacementTool
     public class Vak
     {
         public string vakNaam; // vak A, B, C of D
-        public int huidigAantalPlekkenInVak = 0;
+        public int huidigAantalBezoekersInVak = 0;
         public int maximaalAantalPlekkenInVak;
         public int rijBreedte;
         public int rij = 1;
+        public int bezoekersOpDezeRij;
         public int stoelNummer = 1;
         
 
@@ -25,32 +26,41 @@ namespace VisitorsPlacementTool
 
         public bool IsErPlekInVak()
         {
-            if (huidigAantalPlekkenInVak < maximaalAantalPlekkenInVak)
+            if (huidigAantalBezoekersInVak < maximaalAantalPlekkenInVak)
             {
                 return true;
             }
             return false;
         }
 
-       
         public bool PlaatsBezoekerInVak(Bezoeker bezoeker)
         {
             if(IsErPlekInVak() == true)
             {
-                huidigAantalPlekkenInVak++;
+                huidigAantalBezoekersInVak++;
                 return true;
             }
             VakZitVolBericht(bezoeker);
             return false;
         }
 
-
-        public bool PlaatsBezoekerInRij(Bezoeker bezoeker)
+        public bool IsErPlekOpDezeRij()
         {
-            if (PlaatsBezoekerInVak(bezoeker) == true)
+            if (bezoekersOpDezeRij < rijBreedte)
             {
                 return true;
             }
+            return false;
+        }
+
+        public bool PlaatsBezoekerInRij(Bezoeker bezoeker)
+        {
+            if (PlaatsBezoekerInVak(bezoeker) == true && IsErPlekOpDezeRij() == true)
+            {
+                bezoekersOpDezeRij++;
+                return true;
+            }
+            Console.WriteLine(bezoeker.Naam + " moet worden verplaatst naar rij 2");
             return false;
         }
 
