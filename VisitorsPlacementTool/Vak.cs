@@ -10,14 +10,17 @@ namespace VisitorsPlacementTool
     {
         public string vakNaam; // vak A, B, C of D
         public int huidigAantalPlekkenInVak = 0;
-        public int maximaalAantalPlekkenInVak = 10;
+        public int maximaalAantalPlekkenInVak;
+        public int rijBreedte;
         public int rij = 1;
         public int stoelNummer = 1;
         
 
-        public Vak(string vakNaam)
+        public Vak(string vakNaam, int maximaalAantalPlekkenInVak, int rijBreedte)
         {
             this.vakNaam = vakNaam;
+            this.maximaalAantalPlekkenInVak = maximaalAantalPlekkenInVak;
+            this.rijBreedte = rijBreedte;
         }
 
         public bool IsErPlekInVak()

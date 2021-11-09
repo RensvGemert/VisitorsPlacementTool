@@ -11,12 +11,13 @@ namespace VisitorsPlacementTool
         public string EvenementNaam; 
         public DateTime Datum;
         public int HuidigAantalBezoekers = 0;
-        public int MaxAantalBezoekers = 4;
+        public int MaxAantalBezoekers;
 
-        public Evenement(string EvenementNaam, DateTime Datum)
+        public Evenement(string EvenementNaam, DateTime Datum, int MaxAantalBezoekers)
         {
             this.EvenementNaam = EvenementNaam;
             this.Datum = Datum;
+            this.MaxAantalBezoekers = MaxAantalBezoekers;
         }
 
         public int AantalBezoekersWelkom()

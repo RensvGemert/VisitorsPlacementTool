@@ -9,7 +9,7 @@ namespace VisitorsPlacementTool
         static void Main(string[] args)
         {
             // Evenement
-            Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today);
+            Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
             Console.WriteLine(evenement.EvenementNaam);
             Console.WriteLine(evenement.Datum.ToShortDateString());
 
@@ -46,26 +46,8 @@ namespace VisitorsPlacementTool
                 }              
             }
 
-            //Console.WriteLine("Alle kinderen: ");
-            //foreach (var kind in alleKinderen)
-            //{
-            //    Console.WriteLine(kind.Naam);
-            //}
-
-            // break
-            //Console.WriteLine();
-
-            //Console.WriteLine("alle volwassenen: ");
-            //foreach (var volwassene in alleVolwassene)
-            //{
-            //    Console.WriteLine(volwassene.Naam);
-            //}
-
             // Vak A 
-            Vak vakA = new Vak("A");
-
-            // break
-            Console.WriteLine();
+            Vak vakA = new Vak("A", 15, 5); // Vak "A", heeft maximaal 15 zitplaatsen en 5 stoelen per rij.
 
             // Kinderen plaatsen
             Console.WriteLine("Kinderen plaatsen: ");
@@ -81,9 +63,6 @@ namespace VisitorsPlacementTool
                     evenement.EvenementZitVolBericht();
                 }
             }
-
-            // break
-            Console.WriteLine();
 
             // Volwassenen plaatsen
             Console.WriteLine("Volwassenen plaatsen: ");
