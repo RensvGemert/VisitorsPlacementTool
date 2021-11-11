@@ -9,15 +9,22 @@ namespace VisitorsPlacementTool
         private static List<Bezoeker> bezoekers = new List<Bezoeker>();
         static void Main(string[] args)
         {
+            MaakTestEvenement();
             MaakBezoekerTestData();
             ToonAlleBezoekers();
             ToonAlleKinderen();
             ToonAlleVolwassenen();
-
-            MaakEvenement();
             Console.ReadLine();
         }
-           
+          
+        // Maak evenement
+        private static void MaakTestEvenement()
+        {
+            Console.WriteLine("Evenement: ");
+            Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
+            Console.WriteLine($"{evenement.EvenementNaam} \n {evenement.Datum} \n");
+        }
+
         // Maak testdata
         private static void MaakBezoekerTestData()
         {
@@ -27,14 +34,6 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker { Naam = "bezoeker04", Leeftijd = 14 });
             bezoekers.Add(new Bezoeker { Naam = "bezoeker05", Leeftijd = 8 });
             bezoekers.Add(new Bezoeker { Naam = "bezoeker06", Leeftijd = 18 });
-        }
-
-        // Maak evenement
-        private static void MaakEvenement()
-        {
-            Console.WriteLine("Evenement: ");
-            Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
-            Console.WriteLine($"{evenement.EvenementNaam} \n {evenement.Datum} \n");
         }
 
         // Alle bezoekers
@@ -54,7 +53,7 @@ namespace VisitorsPlacementTool
             Console.WriteLine("Alle kinderen:");
             foreach (var bezoeker in bezoekers)
             {
-                if(bezoeker.Leeftijd <= 12)
+                if(bezoeker.IsKind() == true)
                 {
                     Console.WriteLine($"Naam: { bezoeker.Naam } Leeftijd: {bezoeker.Leeftijd}");
                 }
@@ -68,7 +67,7 @@ namespace VisitorsPlacementTool
             Console.WriteLine("Alle volwassenen:");
             foreach (var bezoeker in bezoekers)
             {
-                if (bezoeker.Leeftijd > 12)
+                if (bezoeker.IsKind() == false)
                 {
                     Console.WriteLine($"Naam: { bezoeker.Naam } Leeftijd: {bezoeker.Leeftijd}");
                 }
