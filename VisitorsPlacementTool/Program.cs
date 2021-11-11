@@ -15,6 +15,7 @@ namespace VisitorsPlacementTool
             ToonAlleVolwassenen();
 
             MaakEvenement();
+            Console.ReadLine();
         }
            
         // Maak testdata
@@ -28,6 +29,7 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker { Naam = "bezoeker06", Leeftijd = 18 });
         }
 
+        // Maak evenement
         private static void MaakEvenement()
         {
             Console.WriteLine("Evenement: ");
