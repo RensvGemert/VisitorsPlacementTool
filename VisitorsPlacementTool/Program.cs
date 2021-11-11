@@ -6,85 +6,72 @@ namespace VisitorsPlacementTool
 {
     class Program
     {
+        private static List<Bezoeker> bezoekers = new List<Bezoeker>();
         static void Main(string[] args)
         {
-            // Evenement
+            MaakBezoekerTestData();
+            ToonAlleBezoekers();
+            ToonAlleKinderen();
+            ToonAlleVolwassenen();
+
+            MaakEvenement();
+        }
+           
+        // Maak testdata
+        private static void MaakBezoekerTestData()
+        {
+            bezoekers.Add(new Bezoeker { Naam = "bezoeker01", Leeftijd = 21 });
+            bezoekers.Add(new Bezoeker { Naam = "bezoeker02", Leeftijd = 12 });
+            bezoekers.Add(new Bezoeker { Naam = "bezoeker03", Leeftijd = 15 });
+            bezoekers.Add(new Bezoeker { Naam = "bezoeker04", Leeftijd = 14 });
+            bezoekers.Add(new Bezoeker { Naam = "bezoeker05", Leeftijd = 8 });
+            bezoekers.Add(new Bezoeker { Naam = "bezoeker06", Leeftijd = 18 });
+        }
+
+        private static void MaakEvenement()
+        {
+            Console.WriteLine("Evenement: ");
             Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
-            Console.WriteLine(evenement.EvenementNaam);
-            Console.WriteLine(evenement.Datum.ToShortDateString());
+            Console.WriteLine($"{evenement.EvenementNaam} \n {evenement.Datum} \n");
+        }
 
-            // Bezoekers
-            Bezoeker bezoeker1 = new Bezoeker("bezoeker1", 23);
-            Bezoeker bezoeker2 = new Bezoeker("bezoeker2", 10);
-            Bezoeker bezoeker3 = new Bezoeker("bezoeker3", 22);
-            Bezoeker bezoeker4 = new Bezoeker("bezoeker4", 12);
-            Bezoeker bezoeker5 = new Bezoeker("bezoeker5", 21);
-            Bezoeker bezoeker6 = new Bezoeker("bezoeker6", 15);
-            Bezoeker bezoeker7 = new Bezoeker("bezoeker7", 16);
-            Bezoeker bezoeker8 = new Bezoeker("bezoeker8", 17);
-
-            // Lijst van alle bezoekers
-            List<Bezoeker> alleBezoekers = new List<Bezoeker>();
-            alleBezoekers.Add(bezoeker1);
-            alleBezoekers.Add(bezoeker2);
-            alleBezoekers.Add(bezoeker3);
-            alleBezoekers.Add(bezoeker4);
-            alleBezoekers.Add(bezoeker5);
-            alleBezoekers.Add(bezoeker6);
-            alleBezoekers.Add(bezoeker7);
-            alleBezoekers.Add(bezoeker8);
-
-            // Lijst van alle kinderen
-            List<Bezoeker> alleKinderen = new List<Bezoeker>();
-
-            // Lijst van alle volwassene
-            List<Bezoeker> alleVolwassene = new List<Bezoeker>();
-
-            foreach (var bezoeker in alleBezoekers)
+        // Alle bezoekers
+        private static void ToonAlleBezoekers()
+        {
+            Console.WriteLine("Alle bezoekers: ");
+            foreach (var bezoeker in bezoekers)
             {
-                if(bezoeker.IsKind() == true)
-                {
-                    alleKinderen.Add(bezoeker);
-                }
-                else
-                {
-                    alleVolwassene.Add(bezoeker);
-                }              
+                Console.WriteLine($"Naam: { bezoeker.Naam} Leeftijd: {bezoeker.Leeftijd}");
             }
+            Console.WriteLine();
+        }
 
-            // Vak A 
-            Vak vak = new Vak("A", 6, 3); // "(vakNaam)", (maxAantalBezoekersInVak), (aantalStoelenPerRij)
-
-            // Kinderen plaatsen
-            Console.WriteLine("Kinderen plaatsen: ");
-            foreach (var bezoeker in alleKinderen)
+        // Alle kinderen
+        private static void ToonAlleKinderen()
+        {
+            Console.WriteLine("Alle kinderen:");
+            foreach (var bezoeker in bezoekers)
             {
-                if (evenement.ZijnErPlekkenBeschikbaar() == true)
+                if(bezoeker.Leeftijd <= 12)
                 {
-                    vak.PlaatsBezoeker(bezoeker);
-                    evenement.HuidigAantalBezoekers++;
-                }
-                else
-                {
-                    evenement.EvenementZitVolBericht();
+                    Console.WriteLine($"Naam: { bezoeker.Naam } Leeftijd: {bezoeker.Leeftijd}");
                 }
             }
+            Console.WriteLine();
+        }
 
-            // Volwassenen plaatsen
-            Console.WriteLine("Volwassenen plaatsen: ");
-            foreach (var bezoeker in alleVolwassene)
+        // Alle volwassenen
+        private static void ToonAlleVolwassenen()
+        {
+            Console.WriteLine("Alle volwassenen:");
+            foreach (var bezoeker in bezoekers)
             {
-                if (evenement.ZijnErPlekkenBeschikbaar() == true)
+                if (bezoeker.Leeftijd > 12)
                 {
-                    vak.PlaatsBezoeker(bezoeker);
-                    evenement.HuidigAantalBezoekers++;
-                }
-                else
-                {
-                    evenement.EvenementZitVolBericht();
+                    Console.WriteLine($"Naam: { bezoeker.Naam } Leeftijd: {bezoeker.Leeftijd}");
                 }
             }
-            Console.ReadLine();
+            Console.WriteLine();
         }
     }
 }

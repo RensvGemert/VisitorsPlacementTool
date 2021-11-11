@@ -8,14 +8,19 @@ namespace VisitorsPlacementTool
 {
     public class Bezoeker
     {
-        public string Naam;
-        public int Leeftijd;
-        public int MinimumLeeftijd = 12;
+        public string Naam { get; set; }
+        public int Leeftijd { get; set; }
 
-        public Bezoeker(string Naam, int Leeftijd)
+        private int MinimumLeeftijd = 12;
+        public Bezoeker()
         {
-            this.Naam = Naam;
-            this.Leeftijd = Leeftijd;
+
+        }
+
+        public Bezoeker(string naam, int leeftijd)
+        {
+            Naam = naam;
+            Leeftijd = leeftijd;
         }
 
         public bool IsKind()

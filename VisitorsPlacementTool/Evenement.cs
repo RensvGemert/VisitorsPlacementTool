@@ -8,10 +8,10 @@ namespace VisitorsPlacementTool
 {
     public class Evenement
     {    
-        public string EvenementNaam; 
-        public DateTime Datum;
-        public int HuidigAantalBezoekers = 0;
-        public int MaxAantalBezoekers;
+        public string EvenementNaam { get; set; } 
+        public DateTime Datum { get; set; }
+        private int HuidigAantalBezoekers = 0;
+        private int MaxAantalBezoekers;
 
         public Evenement(string EvenementNaam, DateTime Datum, int MaxAantalBezoekers)
         {
