@@ -78,10 +78,15 @@ namespace VisitorsPlacementTool
 
         private static void MaakVakken()
         {
-            vakken.Add(new Vak { VakLetter = "A", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
-            vakken.Add(new Vak { VakLetter = "B", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
-            vakken.Add(new Vak { VakLetter = "C", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
-            vakken.Add(new Vak { VakLetter = "D", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
+            vakken.Add(new Vak { VakLetter = "A", AantalRijen = 3, AantalStoelenPerRij = 5 });
+            vakken.Add(new Vak { VakLetter = "B", AantalRijen = 3, AantalStoelenPerRij = 5 });
+            vakken.Add(new Vak { VakLetter = "C", AantalRijen = 3, AantalStoelenPerRij = 5 });
+            vakken.Add(new Vak { VakLetter = "D", AantalRijen = 3, AantalStoelenPerRij = 5 });
+
+            foreach (var vak in vakken)
+            {
+                //vak.MaakRijen();
+            }
         }
 
         private static void ToonAlleVakken()
@@ -89,7 +94,7 @@ namespace VisitorsPlacementTool
             Console.WriteLine("Alle vakken");
             foreach (var vak in vakken)
             {
-                Console.WriteLine($"Vak: { vak.VakLetter } MaxBezoekers: { vak.MaxAantalBezoekersInVak } Aantal stoelen per rij: { vak.AantalStoelenOpDezeRij }");
+                Console.WriteLine($"Vak: { vak.VakLetter } Aantal rijen: { vak.AantalRijen } Aantal stoelen per rij: { vak.AantalStoelenPerRij }");
             }
         }
     }
