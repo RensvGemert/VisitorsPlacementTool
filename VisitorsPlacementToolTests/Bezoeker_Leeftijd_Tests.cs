@@ -15,10 +15,10 @@ namespace VisitorsPlacementTool.Tests
         public void CheckIsKind_Is_False()
         {
             // arrange
-            Bezoeker visitor = new Bezoeker("Rens", 13);
+            Bezoeker bezoeker = new Bezoeker("Rens", 13);
 
             // act
-            bool isKind = visitor.IsKind();
+            bool isKind = bezoeker.IsKind();
 
             // assert
             Assert.IsFalse(isKind);
@@ -28,10 +28,10 @@ namespace VisitorsPlacementTool.Tests
         public void CheckIsKind_Is_True()
         {
             // arrange
-            Bezoeker visitor = new Bezoeker("Rens", 12);
+            Bezoeker bezoeker = new Bezoeker("Rens", 12);
 
             // act
-            bool isKind = visitor.IsKind();
+            bool isKind = bezoeker.IsKind();
 
             // assert
             Assert.IsTrue(isKind);

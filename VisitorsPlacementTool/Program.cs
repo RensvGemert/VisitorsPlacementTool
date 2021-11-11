@@ -19,13 +19,13 @@ namespace VisitorsPlacementTool
 
             MaakVakken();
             ToonAlleVakken();
-            
+
             Console.ReadLine();
         }
           
         private static void MaakEvenementTestData()
         {
-            Console.WriteLine("Evenement: ");
+            Console.WriteLine("Evenement ");
             Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
             Console.WriteLine($"{evenement.EvenementNaam} \n {evenement.Datum} \n");
         }
@@ -79,14 +79,9 @@ namespace VisitorsPlacementTool
         private static void MaakVakken()
         {
             vakken.Add(new Vak { VakLetter = "A", AantalRijen = 3, AantalStoelenPerRij = 5 });
-            vakken.Add(new Vak { VakLetter = "B", AantalRijen = 3, AantalStoelenPerRij = 5 });
-            vakken.Add(new Vak { VakLetter = "C", AantalRijen = 3, AantalStoelenPerRij = 5 });
-            vakken.Add(new Vak { VakLetter = "D", AantalRijen = 3, AantalStoelenPerRij = 5 });
-
-            foreach (var vak in vakken)
-            {
-                //vak.MaakRijen();
-            }
+            vakken.Add(new Vak { VakLetter = "B", AantalRijen = 2, AantalStoelenPerRij = 3 });
+            vakken.Add(new Vak { VakLetter = "C", AantalRijen = 1, AantalStoelenPerRij = 6 });
+            vakken.Add(new Vak { VakLetter = "D", AantalRijen = 3, AantalStoelenPerRij = 7 });
         }
 
         private static void ToonAlleVakken()
