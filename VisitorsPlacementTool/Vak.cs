@@ -8,24 +8,29 @@ namespace VisitorsPlacementTool
 {
     public class Vak
     {
-        public string vakNaam;
-        public int aantalBezoekersInVak = 0;
-        public int maxAantalBezoekersInVak;
-        public int aantalStoelenOpDezeRij;       
-        public int aantalBezoekersOpDezeRij;
-        public int stoelNummer = 1;
-        public int rijNummer = 1;
-
-        public Vak(string vakNaam, int maxAantalBezoekersInVak, int aantalStoelenPerRij)
+        public string VakLetter { get; set; }
+        public int MaxAantalBezoekersInVak { get; set; }
+        public int AantalStoelenOpDezeRij { get; set; }
+        public int AantalBezoekersInVak = 0;
+    
+        public int AantalBezoekersOpDezeRij;
+        public int StoelNummer = 1;
+        public int RijNummer = 1;
+        public Vak()
         {
-            this.vakNaam = vakNaam;
-            this.maxAantalBezoekersInVak = maxAantalBezoekersInVak;
-            this.aantalStoelenOpDezeRij = aantalStoelenPerRij;
+
+        }
+
+        public Vak(string vakLetter, int maxAantalBezoekersInVak, int aantalStoelenOpDezeRij)
+        {
+            VakLetter = vakLetter;
+            MaxAantalBezoekersInVak = maxAantalBezoekersInVak;
+            AantalStoelenOpDezeRij = aantalStoelenOpDezeRij;
         }
 
         public bool IsErPlekInVak()
         {
-            if (aantalBezoekersInVak < maxAantalBezoekersInVak)
+            if (AantalBezoekersInVak < MaxAantalBezoekersInVak)
             {
                 return true;
             }
@@ -36,7 +41,7 @@ namespace VisitorsPlacementTool
         {
             if(IsErPlekInVak() == true)
             {
-                aantalBezoekersInVak++;
+                AantalBezoekersInVak++;
                 return true;
             }
             VakZitVolBericht(bezoeker);
@@ -45,7 +50,7 @@ namespace VisitorsPlacementTool
 
         public bool IsErPlekOpDezeRij()
         {
-            if (aantalBezoekersOpDezeRij < aantalStoelenOpDezeRij)
+            if (AantalBezoekersOpDezeRij < AantalStoelenOpDezeRij)
             {
                 return true;
             }
@@ -56,7 +61,7 @@ namespace VisitorsPlacementTool
         {
             if (PlaatsBezoekerInVak(bezoeker) == true && IsErPlekOpDezeRij() == true)
             {
-                aantalBezoekersOpDezeRij++;
+                AantalBezoekersOpDezeRij++;
                 return true;
             }
             if(IsErPlekInVak() == true)
@@ -70,8 +75,8 @@ namespace VisitorsPlacementTool
         {
             if (PlaatsBezoekerInRij(bezoeker) == true)
             {
-                Console.WriteLine(bezoeker.Naam + " Word geplaatst op stoel: " + vakNaam + rijNummer + "-" +  stoelNummer);
-                stoelNummer++;
+                Console.WriteLine(bezoeker.Naam + " Word geplaatst op stoel: " + VakLetter + RijNummer + "-" +  StoelNummer);
+                StoelNummer++;
                 return true;
             }
             return false;

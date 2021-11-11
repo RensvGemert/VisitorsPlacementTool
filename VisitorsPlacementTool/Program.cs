@@ -7,17 +7,22 @@ namespace VisitorsPlacementTool
     class Program
     {
         private static List<Bezoeker> bezoekers = new List<Bezoeker>();
+        private static List<Vak> vakken = new List<Vak>();
         static void Main(string[] args)
         {
             MaakEvenementTestData();
+
             MaakBezoekerTestData();
             ToonAlleBezoekers();
             ToonAlleKinderen();
             ToonAlleVolwassenen();
+
+            MaakVakken();
+            ToonAlleVakken();
+            
             Console.ReadLine();
         }
           
-        // Maak evenement
         private static void MaakEvenementTestData()
         {
             Console.WriteLine("Evenement: ");
@@ -25,7 +30,6 @@ namespace VisitorsPlacementTool
             Console.WriteLine($"{evenement.EvenementNaam} \n {evenement.Datum} \n");
         }
 
-        // Maak testdata
         private static void MaakBezoekerTestData()
         {
             bezoekers.Add(new Bezoeker { Naam = "bezoeker01", Leeftijd = 21 });
@@ -36,7 +40,6 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker { Naam = "bezoeker06", Leeftijd = 18 });
         }
 
-        // Alle bezoekers
         private static void ToonAlleBezoekers()
         {
             Console.WriteLine("Alle bezoekers: ");
@@ -47,7 +50,6 @@ namespace VisitorsPlacementTool
             Console.WriteLine();
         }
 
-        // Alle kinderen
         private static void ToonAlleKinderen()
         {
             Console.WriteLine("Alle kinderen:");
@@ -61,7 +63,6 @@ namespace VisitorsPlacementTool
             Console.WriteLine();
         }
 
-        // Alle volwassenen
         private static void ToonAlleVolwassenen()
         {
             Console.WriteLine("Alle volwassenen:");
@@ -73,6 +74,23 @@ namespace VisitorsPlacementTool
                 }
             }
             Console.WriteLine();
+        }
+
+        private static void MaakVakken()
+        {
+            vakken.Add(new Vak { VakLetter = "A", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
+            vakken.Add(new Vak { VakLetter = "B", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
+            vakken.Add(new Vak { VakLetter = "C", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
+            vakken.Add(new Vak { VakLetter = "D", MaxAantalBezoekersInVak = 15, AantalStoelenOpDezeRij = 5 });
+        }
+
+        private static void ToonAlleVakken()
+        {
+            Console.WriteLine("Alle vakken");
+            foreach (var vak in vakken)
+            {
+                Console.WriteLine($"Vak: { vak.VakLetter } MaxBezoekers: { vak.MaxAantalBezoekersInVak } Aantal stoelen per rij: { vak.AantalStoelenOpDezeRij }");
+            }
         }
     }
 }
