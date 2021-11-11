@@ -9,7 +9,7 @@ namespace VisitorsPlacementTool
         private static List<Bezoeker> bezoekers = new List<Bezoeker>();
         static void Main(string[] args)
         {
-            MaakTestEvenement();
+            MaakEvenementTestData();
             MaakBezoekerTestData();
             ToonAlleBezoekers();
             ToonAlleKinderen();
@@ -18,7 +18,7 @@ namespace VisitorsPlacementTool
         }
           
         // Maak evenement
-        private static void MaakTestEvenement()
+        private static void MaakEvenementTestData()
         {
             Console.WriteLine("Evenement: ");
             Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
