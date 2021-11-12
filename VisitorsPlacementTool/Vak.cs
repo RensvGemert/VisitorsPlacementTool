@@ -40,7 +40,7 @@ namespace VisitorsPlacementTool
                         }
                         rijen.Add(new Rij(i, stoelen));
                         Console.WriteLine($"Vak {VakLetter}");
-                        Console.WriteLine($"Rij { i } toegevoegd met { aantalStoelenPerRij } stoelen");
+                        Console.WriteLine($"Rij { i } heeft { aantalStoelenPerRij } stoelen");
                         foreach (var stoel in stoelen)
                         {
                             Console.WriteLine(stoel.StoelCode);

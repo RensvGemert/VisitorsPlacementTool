@@ -17,8 +17,6 @@ namespace VisitorsPlacementTool
             ToonAlleBezoekers();
             ToonAlleKinderen();
             ToonAlleVolwassenen();
-
-            Console.ReadLine();
         }
           
         private static void MaakEvenement()
@@ -76,7 +74,7 @@ namespace VisitorsPlacementTool
 
         private static void MaakTestVak()
         {
-            Vak vak = new Vak("A", 3, 5);
+            Vak vak = new Vak("A", 3, 3);
             Console.WriteLine();
         }
     }
