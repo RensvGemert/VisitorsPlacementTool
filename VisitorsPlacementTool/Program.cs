@@ -26,6 +26,12 @@ namespace VisitorsPlacementTool
             Console.WriteLine($"{evenement.EvenementNaam} \n {evenement.Datum} \n");
         }
 
+        private static void MaakTestVak()
+        {
+            Vak vak = new Vak("A", 3, 3);
+            Console.WriteLine();
+        }
+
         private static void MaakBezoekerTestData()
         {
             bezoekers.Add(new Bezoeker { Naam = "bezoeker01", Leeftijd = 21 });
@@ -69,12 +75,6 @@ namespace VisitorsPlacementTool
                     Console.WriteLine($"Naam: { bezoeker.Naam } Leeftijd: {bezoeker.Leeftijd}");
                 }
             }
-            Console.WriteLine();
-        }
-
-        private static void MaakTestVak()
-        {
-            Vak vak = new Vak("A", 3, 3);
             Console.WriteLine();
         }
     }
