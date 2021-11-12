@@ -7,23 +7,21 @@ namespace VisitorsPlacementTool
     class Program
     {
         private static List<Bezoeker> bezoekers = new List<Bezoeker>();
-        private static List<Vak> vakken = new List<Vak>();
         static void Main(string[] args)
         {
-            MaakEvenementTestData();
+            MaakEvenement();
+
+            MaakTestVak();
 
             MaakBezoekerTestData();
             ToonAlleBezoekers();
             ToonAlleKinderen();
             ToonAlleVolwassenen();
 
-            MaakVakken();
-            ToonAlleVakken();
-
             Console.ReadLine();
         }
           
-        private static void MaakEvenementTestData()
+        private static void MaakEvenement()
         {
             Console.WriteLine("Evenement ");
             Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
@@ -76,21 +74,10 @@ namespace VisitorsPlacementTool
             Console.WriteLine();
         }
 
-        private static void MaakVakken()
+        private static void MaakTestVak()
         {
-            vakken.Add(new Vak { VakLetter = "A", AantalRijen = 3, AantalStoelenPerRij = 5 });
-            vakken.Add(new Vak { VakLetter = "B", AantalRijen = 2, AantalStoelenPerRij = 3 });
-            vakken.Add(new Vak { VakLetter = "C", AantalRijen = 1, AantalStoelenPerRij = 6 });
-            vakken.Add(new Vak { VakLetter = "D", AantalRijen = 3, AantalStoelenPerRij = 7 });
-        }
-
-        private static void ToonAlleVakken()
-        {
-            Console.WriteLine("Alle vakken");
-            foreach (var vak in vakken)
-            {
-                Console.WriteLine($"Vak: { vak.VakLetter } Aantal rijen: { vak.AantalRijen } Aantal stoelen per rij: { vak.AantalStoelenPerRij }");
-            }
+            Vak vak = new Vak("A", 3, 5);
+            Console.WriteLine();
         }
     }
 }
