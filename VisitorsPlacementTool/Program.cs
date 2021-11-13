@@ -14,16 +14,21 @@ namespace VisitorsPlacementTool
             MaakTestVak();
 
             MaakBezoekerTestData();
-            ToonAlleBezoekers();
-            ToonAlleKinderen();
-            ToonAlleVolwassenen();
+
+            //BerekenAantalBezoekers();
+            //BerekenAantalKinderen(bezoekers);
+            //BerekenAantalVolwassenen(bezoekers);
+
+            //ToonAlleBezoekers();
+            //ToonAlleKinderen();
+            //ToonAlleVolwassenen();
         }
           
-        private static void MaakEvenement()
+        public static void MaakEvenement()
         {
-            Console.WriteLine("Evenement ");
-            Evenement evenement = new Evenement("Parcour Eindhoven", DateTime.Today, 50);
-            Console.WriteLine($"{evenement.EvenementNaam} \n {evenement.Datum} \n");
+            Console.WriteLine("Evenement");
+            Evenement evenement = new Evenement("Parcour Eindhoven", 50);
+            Console.WriteLine($"{evenement.EvenementNaam} \n");        
         }
 
         private static void MaakTestVak()
@@ -76,6 +81,37 @@ namespace VisitorsPlacementTool
                 }
             }
             Console.WriteLine();
+        }
+
+        private static void BerekenAantalBezoekers()
+        {
+            Console.WriteLine($"Aantal ingeschreven bezoekers: {bezoekers.Count()}");
+        }
+
+        private static void BerekenAantalKinderen(List<Bezoeker> bezoekers)
+        {
+            List<Bezoeker> kinderen = new List<Bezoeker>();
+            foreach (var bezoeker in bezoekers)
+            {
+                if (bezoeker.IsKind() == true)
+                {
+                    kinderen.Add(bezoeker);
+                }
+            }
+            Console.WriteLine($"Aantal ingeschreven kinderen: {kinderen.Count()}");
+        }
+
+        private static void BerekenAantalVolwassenen(List<Bezoeker> bezoekers)
+        {
+            List<Bezoeker> volwassenen = new List<Bezoeker>();
+            foreach (var bezoeker in bezoekers)
+            {
+                if (bezoeker.IsKind() == false)
+                {
+                    volwassenen.Add(bezoeker);
+                }
+            }
+            Console.WriteLine($"Aantal ingeschreven volwassenen: {volwassenen.Count()}");
         }
     }
 }
