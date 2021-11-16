@@ -52,7 +52,7 @@ namespace VisitorsPlacementTool
 
         public bool PlaatsBezoeker(Bezoeker bezoeker)
         {
-            if (bezoeker.IsGeplaatst)
+            if (bezoeker.IsGeplaatst == true)
             {
                 return false;
             }

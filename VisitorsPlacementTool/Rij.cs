@@ -16,6 +16,17 @@ namespace VisitorsPlacementTool
             AantalRijen = aantalRijen;
             Stoelen = aantalStoelenPerRij;
         }
+        public bool IsErPlek()
+        {
+            foreach (var stoel in Stoelen)
+            {
+                if (stoel.Bezoeker == null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public bool PlaatsBezoeker(Bezoeker bezoeker)
         {    
@@ -26,18 +37,6 @@ namespace VisitorsPlacementTool
                     stoel.PlaatsBezoeker(bezoeker);
                     return true;
                 }              
-            }
-            return false;
-        }
-
-        public bool IsErPlek()
-        {
-            foreach(var stoel in Stoelen)
-            {
-                if (stoel.Bezoeker == null)
-                {
-                    return true;
-                }            
             }
             return false;
         }

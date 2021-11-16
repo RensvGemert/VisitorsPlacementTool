@@ -25,8 +25,15 @@ namespace VisitorsPlacementTool
             foreach (var rij in vak.rijen)
             {
                 foreach (var stoel in rij.Stoelen)
-                {
-                    Console.WriteLine(stoel);
+                {                 
+                    if (stoel.Bezoeker != null)
+                    {
+                        Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
+                    }
+                    else
+                    {
+                        Console.WriteLine(stoel.StoelCode);
+                    }                 
                 }
             }
 
