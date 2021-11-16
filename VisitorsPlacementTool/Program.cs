@@ -21,7 +21,6 @@ namespace VisitorsPlacementTool
 
             Console.WriteLine();
 
-
             // Print Vak A:
             foreach (var rij in vak.rijen)
             {
