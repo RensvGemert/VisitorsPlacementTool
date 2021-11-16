@@ -21,11 +21,13 @@ namespace VisitorsPlacementTool
 
             Console.WriteLine();
 
+
+            // Print Vak A:
             foreach (var rij in vak.rijen)
             {
                 foreach (var stoel in rij.Stoelen)
                 {
-                    Console.WriteLine(stoel);
+                    Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
                 }
             }
 
