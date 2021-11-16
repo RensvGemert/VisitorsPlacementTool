@@ -12,16 +12,16 @@ namespace VisitorsPlacementTool
             MaakEvenement();
             MaakBezoekerTestData();
 
-            Vak vakA = MaakVakA();
+            Vak vak = MaakVakA();
 
             foreach (var bezoeker in bezoekers)
             {
-                vakA.PlaatsBezoeker(bezoeker);
+                vak.PlaatsBezoeker(bezoeker);
             }
 
             Console.WriteLine();
 
-            foreach (var rij in vakA.rijen)
+            foreach (var rij in vak.rijen)
             {
                 foreach (var stoel in rij.Stoelen)
                 {

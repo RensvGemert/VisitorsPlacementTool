@@ -8,7 +8,6 @@ namespace VisitorsPlacementTool
 {
     public class Rij
     {
-        public int RijId { get; set; }
         public int AantalRijen { get; set; }
         public List<Stoel> Stoelen { get; set; }
 
