@@ -9,7 +9,7 @@ namespace VisitorsPlacementTool
     public class Vak
     {
         public string VakLetter { get; set; }
-        private List<Rij> rijen = new List<Rij>();
+        public List<Rij> rijen = new List<Rij>();
 
         public Vak()
         {
@@ -39,15 +39,24 @@ namespace VisitorsPlacementTool
                             stoelen.Add(stoel);
                         }
                         rijen.Add(new Rij(i, stoelen));
-                        Console.WriteLine($"Vak {VakLetter}");
-                        Console.WriteLine($"Rij { i } heeft { aantalStoelenPerRij } stoelen");
-                        foreach (var stoel in stoelen)
-                        {
-                            Console.WriteLine(stoel.StoelCode);
-                        }
+                        //Console.WriteLine($"Vak {VakLetter}");
+                        //Console.WriteLine($"Rij { i } heeft { aantalStoelenPerRij } stoelen");
+                        //foreach (var stoel in stoelen)
+                        //{
+                        //    Console.WriteLine(stoel);
+                        //}
                     }
                 }
             }
+        }
+
+        public void PlaatsBezoekerInVak(Bezoeker bezoeker)
+        {
+            foreach (var rij in rijen)
+            {
+                rij.PlaatsBezoeker(bezoeker);
+            }
+
         }
     }
 }

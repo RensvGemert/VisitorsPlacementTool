@@ -10,11 +10,19 @@ namespace VisitorsPlacementTool
     {
         public int RijId { get; set; }
         public int AantalRijen { get; set; }
-        public List<Stoel> AantalStoelenPerRij { get; set; }
+        public List<Stoel> Stoelen { get; set; }
         public Rij(int aantalRijen, List<Stoel> aantalStoelenPerRij)
         {
             AantalRijen = aantalRijen;
-            AantalStoelenPerRij = aantalStoelenPerRij;
+            Stoelen = aantalStoelenPerRij;
+        }
+
+        public void PlaatsBezoeker(Bezoeker bezoeker)
+        {
+            for (int i = 0; i < Stoelen.Count(); i++)
+            {
+                Stoelen[i].PlaatsBezoeker(bezoeker);
+            }
         }
     }
 }

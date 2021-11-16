@@ -10,10 +10,26 @@ namespace VisitorsPlacementTool
         static void Main(string[] args)
         {
             MaakEvenement();
-
-            MaakTestVak();
-
             MaakBezoekerTestData();
+
+            Vak vak = MaakVak();
+            
+            foreach (var bezoeker in bezoekers)
+            {
+                vak.PlaatsBezoekerInVak(bezoeker);
+            }
+
+            Console.WriteLine();
+
+            foreach (var rij in vak.rijen)
+            {
+                foreach (var stoel in rij.Stoelen)
+                {
+                    Console.WriteLine(stoel);
+                }
+            }
+
+            Console.WriteLine();
 
             //BerekenAantalBezoekers();
             //BerekenAantalKinderen(bezoekers);
@@ -24,6 +40,7 @@ namespace VisitorsPlacementTool
             //ToonAlleVolwassenen();
         }
           
+
         public static void MaakEvenement()
         {
             Console.WriteLine("Evenement");
@@ -31,10 +48,10 @@ namespace VisitorsPlacementTool
             Console.WriteLine($"{evenement.EvenementNaam} \n");        
         }
 
-        private static void MaakTestVak()
+        private static Vak MaakVak()
         {
-            Vak vak = new Vak("A", 3, 3);
-            Console.WriteLine();
+            Vak vak = new Vak("A", 1, 10);
+            return vak;
         }
 
         private static void MaakBezoekerTestData()
