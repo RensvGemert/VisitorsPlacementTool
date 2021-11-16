@@ -11,6 +11,7 @@ namespace VisitorsPlacementTool
         public int RijId { get; set; }
         public int AantalRijen { get; set; }
         public List<Stoel> Stoelen { get; set; }
+
         public Rij(int aantalRijen, List<Stoel> aantalStoelenPerRij)
         {
             AantalRijen = aantalRijen;
@@ -21,7 +22,10 @@ namespace VisitorsPlacementTool
         {    
             foreach (var stoel in Stoelen)
             {
-                stoel.PlaatsBezoeker(bezoeker);
+                if(stoel.Bezoeker == null)
+                {
+                    stoel.PlaatsBezoeker(bezoeker);
+                }              
             }
         }
     }

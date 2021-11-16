@@ -25,7 +25,7 @@ namespace VisitorsPlacementTool
         {
             if (Bezoeker != null)
             {
-                return StoelCode + " " + Bezoeker.Naam;
+                return StoelCode + " " + Bezoeker.Naam + " Leeftijd: " + Bezoeker.Leeftijd;
             }
             else
             {
