@@ -27,7 +27,7 @@ namespace VisitorsPlacementTool
             {
                 foreach (var stoel in rij.Stoelen)
                 {
-                    Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
+                    Console.WriteLine(stoel);
                 }
             }
 
@@ -52,12 +52,11 @@ namespace VisitorsPlacementTool
 
         private static void MaakBezoekerTestData()
         {
-            bezoekers.Add(new Bezoeker { Naam = "bezoeker01", Leeftijd = 21 });
-            bezoekers.Add(new Bezoeker { Naam = "bezoeker02", Leeftijd = 12 });
-            bezoekers.Add(new Bezoeker { Naam = "bezoeker03", Leeftijd = 15 });
-            bezoekers.Add(new Bezoeker { Naam = "bezoeker04", Leeftijd = 14 });
-            bezoekers.Add(new Bezoeker { Naam = "bezoeker05", Leeftijd = 8 });
-            bezoekers.Add(new Bezoeker { Naam = "bezoeker06", Leeftijd = 18 });
+            bezoekers.Add(new Bezoeker("bezoeker01", 21));
+            bezoekers.Add(new Bezoeker("bezoeker02", 11));
+            bezoekers.Add(new Bezoeker("bezoeker03", 12));
+            bezoekers.Add(new Bezoeker("bezoeker04", 15));
+            bezoekers.Add(new Bezoeker("bezoeker05", 8));
         }
 
         private static Vak MaakVakA()

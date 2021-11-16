@@ -50,12 +50,22 @@ namespace VisitorsPlacementTool
             }
         }
 
-        public void PlaatsBezoeker(Bezoeker bezoeker)
+        public bool PlaatsBezoeker(Bezoeker bezoeker)
         {
-            foreach (var rij in rijen)
-            {                   
-                rij.PlaatsBezoeker(bezoeker);              
+            if (bezoeker.IsGeplaatst)
+            {
+                return false;
             }
+            foreach (var rij in rijen)
+            {           
+                if (rij.IsErPlek() == true)
+                {
+                    rij.PlaatsBezoeker(bezoeker);
+                    return true;
+                }
+                // check volgende rij 
+            }
+            return false;
         }
     }
 }

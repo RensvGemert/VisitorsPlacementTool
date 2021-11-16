@@ -17,15 +17,29 @@ namespace VisitorsPlacementTool
             Stoelen = aantalStoelenPerRij;
         }
 
-        public void PlaatsBezoeker(Bezoeker bezoeker)
+        public bool PlaatsBezoeker(Bezoeker bezoeker)
         {    
             foreach (var stoel in Stoelen)
             {
                 if(stoel.Bezoeker == null)
                 {
                     stoel.PlaatsBezoeker(bezoeker);
+                    return true;
                 }              
             }
+            return false;
+        }
+
+        public bool IsErPlek()
+        {
+            foreach(var stoel in Stoelen)
+            {
+                if (stoel.Bezoeker == null)
+                {
+                    return true;
+                }            
+            }
+            return false;
         }
     }
 }

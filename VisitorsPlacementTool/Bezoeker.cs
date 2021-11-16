@@ -11,16 +11,15 @@ namespace VisitorsPlacementTool
         public string Naam { get; set; }
         public int Leeftijd { get; set; }
 
-        private int MinimumLeeftijd = 12;
-        public Bezoeker()
-        {
+        public bool IsGeplaatst = false;
 
-        }
+        private int MinimumLeeftijd = 12;
 
         public Bezoeker(string naam, int leeftijd)
         {
-            Naam = naam;
-            Leeftijd = leeftijd;
+            this.Naam = naam;
+            this.Leeftijd = leeftijd;
+            this.IsGeplaatst = false;
         }
 
         public bool IsKind()
