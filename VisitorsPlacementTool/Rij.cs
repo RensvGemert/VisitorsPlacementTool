@@ -18,10 +18,10 @@ namespace VisitorsPlacementTool
         }
 
         public void PlaatsBezoeker(Bezoeker bezoeker)
-        {
-            for (int i = 0; i < Stoelen.Count(); i++)
+        {    
+            foreach (var stoel in Stoelen)
             {
-                Stoelen[i].PlaatsBezoeker(bezoeker);
+                stoel.PlaatsBezoeker(bezoeker);
             }
         }
     }

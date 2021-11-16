@@ -39,12 +39,12 @@ namespace VisitorsPlacementTool
                             stoelen.Add(stoel);
                         }
                         rijen.Add(new Rij(i, stoelen));
-                        //Console.WriteLine($"Vak {VakLetter}");
-                        //Console.WriteLine($"Rij { i } heeft { aantalStoelenPerRij } stoelen");
-                        //foreach (var stoel in stoelen)
-                        //{
-                        //    Console.WriteLine(stoel);
-                        //}
+                        Console.WriteLine($"Vak {VakLetter}");
+                        Console.WriteLine($"Rij { i } heeft { aantalStoelenPerRij } stoelen");
+                        foreach (var stoel in stoelen)
+                        {
+                            Console.WriteLine(stoel);
+                        }
                     }
                 }
             }

@@ -48,12 +48,6 @@ namespace VisitorsPlacementTool
             Console.WriteLine($"{evenement.EvenementNaam} \n");        
         }
 
-        private static Vak MaakVak()
-        {
-            Vak vak = new Vak("A", 1, 10);
-            return vak;
-        }
-
         private static void MaakBezoekerTestData()
         {
             bezoekers.Add(new Bezoeker { Naam = "bezoeker01", Leeftijd = 21 });
@@ -62,6 +56,12 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker { Naam = "bezoeker04", Leeftijd = 14 });
             bezoekers.Add(new Bezoeker { Naam = "bezoeker05", Leeftijd = 8 });
             bezoekers.Add(new Bezoeker { Naam = "bezoeker06", Leeftijd = 18 });
+        }
+
+        private static Vak MaakVak()
+        {
+            Vak vak = new Vak("A", 1, 10);
+            return vak;
         }
 
         private static void ToonAlleBezoekers()
