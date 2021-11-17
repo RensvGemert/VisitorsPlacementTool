@@ -18,21 +18,8 @@ namespace VisitorsPlacementTool
             Stoelen = aantalStoelenPerRij;
             MaxStoelenPerRij = aantalStoelenPerRij.Count();
         }
-        public bool IsErPlek(Bezoeker bezoeker)
+        public bool IsErPlek()
         {
-            if (bezoeker.IsKind())
-            {
-                if(Stoelen.Count <= MaxStoelenPerRij)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-                return false;
-            }
-
             foreach (var stoel in Stoelen)
             {
                 if (stoel.Bezoeker == null)

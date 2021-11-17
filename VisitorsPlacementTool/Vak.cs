@@ -67,7 +67,7 @@ namespace VisitorsPlacementTool
             }
             foreach (var rij in rijen)
             {           
-                if (rij.IsErPlek(bezoeker) == true)
+                if (rij.IsErPlek() == true)
                 {
                     rij.PlaatsBezoekerInRij(bezoeker);
                     return true;
