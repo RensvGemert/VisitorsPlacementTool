@@ -10,6 +10,7 @@ namespace VisitorsPlacementTool
     {
         public string VakLetter { get; set; }
         public List<Rij> rijen = new List<Rij>();
+        public int TotaalAantalStoelen;
 
         public Vak()
         {
@@ -20,6 +21,13 @@ namespace VisitorsPlacementTool
         {
             VakLetter = vakLetter;
             MaakRijen(aantalRijen, aantalStoelenPerRij);
+            BerekendeAantalStoelen(aantalRijen, aantalStoelenPerRij);
+        }
+
+        public int BerekendeAantalStoelen(int aantalRijen, int aantalStoelenPerRij)
+        {
+            TotaalAantalStoelen = aantalRijen * aantalStoelenPerRij;
+            return TotaalAantalStoelen;
         }
 
         public void MaakRijen(int aantalRijen, int aantalStoelenPerRij)

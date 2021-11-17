@@ -10,18 +10,26 @@ namespace VisitorsPlacementTool
     {
         public int AantalRijen { get; set; }
         public List<Stoel> Stoelen { get; set; }
+        public int MaxStoelenPerRij { get; set; }
 
         public Rij(int aantalRijen, List<Stoel> aantalStoelenPerRij)
         {
             AantalRijen = aantalRijen;
             Stoelen = aantalStoelenPerRij;
+            MaxStoelenPerRij = aantalStoelenPerRij.Count();
         }
         public bool IsErPlek(Bezoeker bezoeker)
         {
-            // Als bezoeker een kind is
-            // To Do: Check of er plek is op Rij 1 
             if (bezoeker.IsKind())
             {
+                if(Stoelen.Count <= MaxStoelenPerRij)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
                 return false;
             }
 

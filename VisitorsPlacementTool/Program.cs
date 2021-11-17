@@ -17,11 +17,14 @@ namespace VisitorsPlacementTool
             Vak vakB = vakken[1];
             Vak vakC = vakken[2];
 
-            foreach (var bezoeker in bezoekers)
+            if(vakA.TotaalAantalStoelen > bezoekers.Count)
             {
-                vakA.PlaatsBezoekerInVak(bezoeker);              
+                foreach (var bezoeker in bezoekers)
+                {
+                    vakA.PlaatsBezoekerInVak(bezoeker);
+                }
             }
-
+           
             foreach (var vak in vakken)
             {
                 Console.WriteLine("Vak: " + vak.VakLetter);
@@ -80,11 +83,13 @@ namespace VisitorsPlacementTool
 
         private static void MaakBezoekerTestData()
         {
-            bezoekers.Add(new Bezoeker("bezoeker01", 11));
-            bezoekers.Add(new Bezoeker("bezoeker02", 11));
-            bezoekers.Add(new Bezoeker("bezoeker03", 11));
-            bezoekers.Add(new Bezoeker("bezoeker04", 11));
-            bezoekers.Add(new Bezoeker("bezoeker05", 22));
+            bezoekers.Add(new Bezoeker("Kind01", 11));
+            bezoekers.Add(new Bezoeker("Volwassenen01", 22));
+            bezoekers.Add(new Bezoeker("Kind02", 11));
+            bezoekers.Add(new Bezoeker("Kind03", 10));
+            bezoekers.Add(new Bezoeker("Kind04", 11));
+            bezoekers.Add(new Bezoeker("Volwassenen02", 23));
+            bezoekers.Add(new Bezoeker("Volwassenen03", 43));
         }
 
         private static List<Vak> MaakVakken()
