@@ -14,10 +14,12 @@ namespace VisitorsPlacementTool
 
             List<Vak> vakken = MaakVakken();
             Vak vakA = vakken[0];
+            Vak vakB = vakken[1];
+            Vak vakC = vakken[2];
 
             foreach (var bezoeker in bezoekers)
             {
-                vakA.PlaatsBezoekerInVak(bezoeker);
+                vakA.PlaatsBezoekerInVak(bezoeker);              
             }
 
             foreach (var vak in vakken)
@@ -82,7 +84,7 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker("bezoeker02", 11));
             bezoekers.Add(new Bezoeker("bezoeker03", 11));
             bezoekers.Add(new Bezoeker("bezoeker04", 11));
-            bezoekers.Add(new Bezoeker("bezoeker05", 10));
+            bezoekers.Add(new Bezoeker("bezoeker05", 22));
         }
 
         private static List<Vak> MaakVakken()

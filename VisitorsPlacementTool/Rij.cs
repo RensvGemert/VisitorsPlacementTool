@@ -16,8 +16,15 @@ namespace VisitorsPlacementTool
             AantalRijen = aantalRijen;
             Stoelen = aantalStoelenPerRij;
         }
-        public bool IsErPlek()
+        public bool IsErPlek(Bezoeker bezoeker)
         {
+            // Als bezoeker een kind is
+            // To Do: Check of er plek is op Rij 1 
+            if (bezoeker.IsKind())
+            {
+                return false;
+            }
+
             foreach (var stoel in Stoelen)
             {
                 if (stoel.Bezoeker == null)
@@ -29,7 +36,7 @@ namespace VisitorsPlacementTool
         }
 
         public bool PlaatsBezoekerInRij(Bezoeker bezoeker)
-        {    
+        {
             foreach (var stoel in Stoelen)
             {
                 if(stoel.Bezoeker == null)
@@ -42,3 +49,5 @@ namespace VisitorsPlacementTool
         }
     }
 }
+
+//&& bezoeker.IsKind() != true

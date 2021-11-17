@@ -50,6 +50,7 @@ namespace VisitorsPlacementTool
             }
         }
 
+
         public bool PlaatsBezoekerInVak(Bezoeker bezoeker)
         {
             if (bezoeker.IsGeplaatst == true)
@@ -58,7 +59,7 @@ namespace VisitorsPlacementTool
             }
             foreach (var rij in rijen)
             {           
-                if (rij.IsErPlek() == true)
+                if (rij.IsErPlek(bezoeker) == true)
                 {
                     rij.PlaatsBezoekerInRij(bezoeker);
                     return true;
