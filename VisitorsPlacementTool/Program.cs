@@ -17,7 +17,7 @@ namespace VisitorsPlacementTool
             Vak vakB = vakken[1];
             Vak vakC = vakken[2];
 
-            if(vakA.TotaalAantalStoelen > bezoekers.Count)
+            if(vakA.TotaalAantalStoelen >= bezoekers.Count)
             {
                 foreach (var bezoeker in bezoekers)
                 {
@@ -83,13 +83,16 @@ namespace VisitorsPlacementTool
 
         private static void MaakBezoekerTestData()
         {
-            bezoekers.Add(new Bezoeker("Kind01", 11));
-            bezoekers.Add(new Bezoeker("Volwassenen01", 22));
-            bezoekers.Add(new Bezoeker("Kind02", 11));
-            bezoekers.Add(new Bezoeker("Kind03", 10));
-            bezoekers.Add(new Bezoeker("Kind04", 11));
-            bezoekers.Add(new Bezoeker("Volwassenen02", 23));
-            bezoekers.Add(new Bezoeker("Volwassenen03", 43));
+            bezoekers.Add(new Bezoeker("Bezoeker01", 11));
+            bezoekers.Add(new Bezoeker("Bezoeker02", 22));
+            bezoekers.Add(new Bezoeker("Bezoeker03", 11));
+            bezoekers.Add(new Bezoeker("Bezoeker04", 10));
+            bezoekers.Add(new Bezoeker("Bezoeker05", 11));
+            bezoekers.Add(new Bezoeker("Bezoeker06", 23));
+            bezoekers.Add(new Bezoeker("Bezoeker07", 43));
+            bezoekers.Add(new Bezoeker("Bezoeker08", 43));
+            bezoekers.Add(new Bezoeker("Bezoeker09", 43));
+            //bezoekers.Add(new Bezoeker("Bezoeker10", 43));
         }
 
         private static List<Vak> MaakVakken()
