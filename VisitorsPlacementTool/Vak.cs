@@ -21,10 +21,10 @@ namespace VisitorsPlacementTool
         {
             VakLetter = vakLetter;
             MaakRijen(aantalRijen, aantalStoelenPerRij);
-            BerekendeAantalStoelen(aantalRijen, aantalStoelenPerRij);
+            BerekenAantalStoelenPerVak(aantalRijen, aantalStoelenPerRij);
         }
 
-        public int BerekendeAantalStoelen(int aantalRijen, int aantalStoelenPerRij)
+        public int BerekenAantalStoelenPerVak(int aantalRijen, int aantalStoelenPerRij)
         {
             TotaalAantalStoelen = aantalRijen * aantalStoelenPerRij;
             return TotaalAantalStoelen;

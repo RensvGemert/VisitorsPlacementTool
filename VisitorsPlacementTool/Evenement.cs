@@ -10,11 +10,12 @@ namespace VisitorsPlacementTool
     {    
         public string EvenementNaam { get; set; } 
         public int MaxAantalBezoekers { get; set; }
+        public List<Vak> Vakken = new List<Vak>();
 
-        public Evenement(string evenementNaam, int maxAantalBezoekers)
+        public Evenement(string evenementNaam, List<Vak> vakken)
         {
             EvenementNaam = evenementNaam;
-            MaxAantalBezoekers = maxAantalBezoekers;
+            MaxAantalBezoekers = BerekenMaxAantalBezoekers(vakken);
         }
 
         public void EvenementZitVolBericht()
@@ -22,7 +23,14 @@ namespace VisitorsPlacementTool
             Console.WriteLine("Evenement zit vol!");
         }
 
-
-
+        public int BerekenMaxAantalBezoekers(List<Vak> vakken)
+        {
+            int MaxAantalBezoekers = 0;
+            foreach (var vak in vakken)
+            {
+                MaxAantalBezoekers = MaxAantalBezoekers + vak.TotaalAantalStoelen;
+            }
+            return MaxAantalBezoekers;
+        }
     }
 }

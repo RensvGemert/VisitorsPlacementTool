@@ -9,22 +9,22 @@ namespace VisitorsPlacementTool
         private static List<Bezoeker> bezoekers = new List<Bezoeker>();
         static void Main(string[] args)
         {
-            MaakEvenement();
             MaakBezoekerTestData();
 
             List<Vak> vakken = MaakVakken();
+            Evenement evenement = new Evenement("Parcour Eindhoven", vakken);
+            Console.WriteLine(evenement.EvenementNaam);
+            Console.WriteLine(evenement.MaxAantalBezoekers + " bezoekers welkom\n");
+
             Vak vakA = vakken[0];
             Vak vakB = vakken[1];
             Vak vakC = vakken[2];
 
-            if(vakA.TotaalAantalStoelen >= bezoekers.Count)
+            foreach (var bezoeker in bezoekers)
             {
-                foreach (var bezoeker in bezoekers)
-                {
-                    vakA.PlaatsBezoekerInVak(bezoeker);
-                }
+                vakA.PlaatsBezoekerInVak(bezoeker);
             }
-           
+
             foreach (var vak in vakken)
             {
                 Console.WriteLine("Vak: " + vak.VakLetter);
@@ -72,14 +72,6 @@ namespace VisitorsPlacementTool
             //ToonAlleKinderen();
             //ToonAlleVolwassenen();
         }
-          
-
-        public static void MaakEvenement()
-        {
-            Console.WriteLine("Evenement");
-            Evenement evenement = new Evenement("Parcour Eindhoven", 50);
-            Console.WriteLine($"{evenement.EvenementNaam} \n");        
-        }
 
         private static void MaakBezoekerTestData()
         {
@@ -98,9 +90,9 @@ namespace VisitorsPlacementTool
         private static List<Vak> MaakVakken()
         {
             List<Vak> Vakken = new List<Vak>();
-            Vak vakA = new Vak("A", 3, 3);
-            Vak vakB = new Vak("B", 3, 3);
-            Vak vakC = new Vak("C", 3, 3);
+            Vak vakA = new Vak("A", 3, 5);
+            Vak vakB = new Vak("B", 3, 5);
+            Vak vakC = new Vak("C", 3, 5);
 
             Vakken.Add(vakA);
             Vakken.Add(vakB);
