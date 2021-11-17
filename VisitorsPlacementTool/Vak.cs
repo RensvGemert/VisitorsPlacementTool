@@ -50,7 +50,7 @@ namespace VisitorsPlacementTool
             }
         }
 
-        public bool PlaatsBezoeker(Bezoeker bezoeker)
+        public bool PlaatsBezoekerInVak(Bezoeker bezoeker)
         {
             if (bezoeker.IsGeplaatst == true)
             {
@@ -60,7 +60,7 @@ namespace VisitorsPlacementTool
             {           
                 if (rij.IsErPlek() == true)
                 {
-                    rij.PlaatsBezoeker(bezoeker);
+                    rij.PlaatsBezoekerInRij(bezoeker);
                     return true;
                 }
                 // check volgende rij 

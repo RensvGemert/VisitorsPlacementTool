@@ -21,5 +21,8 @@ namespace VisitorsPlacementTool
         {
             Console.WriteLine("Evenement zit vol!");
         }
+
+
+
     }
 }

@@ -12,32 +12,52 @@ namespace VisitorsPlacementTool
             MaakEvenement();
             MaakBezoekerTestData();
 
-            Vak vak = MaakVakA();
+            List<Vak> vakken = MaakVakken();
+            Vak vakA = vakken[0];
 
             foreach (var bezoeker in bezoekers)
             {
-                vak.PlaatsBezoeker(bezoeker);
+                vakA.PlaatsBezoekerInVak(bezoeker);
             }
 
-            Console.WriteLine();
-
-            // Print Vak A:
-            foreach (var rij in vak.rijen)
+            foreach (var vak in vakken)
             {
-                foreach (var stoel in rij.Stoelen)
-                {                 
-                    if (stoel.Bezoeker != null)
+                Console.WriteLine("Vak: " + vak.VakLetter);
+                foreach (var rij in vak.rijen)
+                {
+                    foreach (var stoel in rij.Stoelen)
                     {
-                        Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
+                        if (stoel.Bezoeker != null)
+                        {
+                            Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
+                        }
+                        else
+                        {
+                            Console.WriteLine(stoel.StoelCode);
+                        }
                     }
-                    else
-                    {
-                        Console.WriteLine(stoel.StoelCode);
-                    }                 
+                    Console.WriteLine();
                 }
+                Console.WriteLine();
             }
 
             Console.WriteLine();
+
+            //// Print Vak A:
+            //foreach (var rij in vakA.rijen)
+            //{
+            //    foreach (var stoel in rij.Stoelen)
+            //    {                 
+            //        if (stoel.Bezoeker != null)
+            //        {
+            //            Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine(stoel.StoelCode);
+            //        }                 
+            //    }
+            //}
 
             //BerekenAantalBezoekers();
             //BerekenAantalKinderen(bezoekers);
@@ -58,17 +78,24 @@ namespace VisitorsPlacementTool
 
         private static void MaakBezoekerTestData()
         {
-            bezoekers.Add(new Bezoeker("bezoeker01", 21));
+            bezoekers.Add(new Bezoeker("bezoeker01", 11));
             bezoekers.Add(new Bezoeker("bezoeker02", 11));
-            bezoekers.Add(new Bezoeker("bezoeker03", 12));
-            bezoekers.Add(new Bezoeker("bezoeker04", 15));
-            bezoekers.Add(new Bezoeker("bezoeker05", 8));
+            bezoekers.Add(new Bezoeker("bezoeker03", 11));
+            bezoekers.Add(new Bezoeker("bezoeker04", 11));
+            bezoekers.Add(new Bezoeker("bezoeker05", 10));
         }
 
-        private static Vak MaakVakA()
+        private static List<Vak> MaakVakken()
         {
-            Vak vak = new Vak("A", 3, 3);
-            return vak;
+            List<Vak> Vakken = new List<Vak>();
+            Vak vakA = new Vak("A", 3, 3);
+            Vak vakB = new Vak("B", 3, 3);
+            Vak vakC = new Vak("C", 3, 3);
+
+            Vakken.Add(vakA);
+            Vakken.Add(vakB);
+            Vakken.Add(vakC);
+            return Vakken;
         }
 
         private static void ToonAlleBezoekers()
