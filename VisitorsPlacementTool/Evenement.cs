@@ -32,5 +32,39 @@ namespace VisitorsPlacementTool
             }
             return MaxAantalBezoekers;
         }
+
+
+        public void PlaatsBezoekers(List<Bezoeker> bezoekers, List<Vak> vakken)
+        {
+            Vak vakA = vakken[0];
+            Vak vakB = vakken[1];
+            Vak vakC = vakken[2];
+
+            foreach (var bezoeker in bezoekers)
+            {
+                if (vakA.AantalBezoekersInDitVak < vakA.TotaalAantalStoelen)
+                {
+                    vakA.PlaatsBezoeker(bezoeker);
+                }
+                else if (vakB.AantalBezoekersInDitVak < vakB.TotaalAantalStoelen)
+                {
+                    vakB.PlaatsBezoeker(bezoeker);
+                }
+                else if (vakC.AantalBezoekersInDitVak < vakC.TotaalAantalStoelen)
+                {
+                    vakC.PlaatsBezoeker(bezoeker);
+                }
+                else
+                {
+                    EvenementVolBericht(bezoeker);
+                }
+            }
+        }
+
+        public void EvenementVolBericht(Bezoeker bezoeker)
+        {
+            Console.WriteLine(bezoeker.Naam + " kon niet worden geplaatst, evenement zit vol!");
+            Console.WriteLine();
+        }
     }
 }

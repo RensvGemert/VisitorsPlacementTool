@@ -12,39 +12,16 @@ namespace VisitorsPlacementTool
             // Maak bezoekers
             MaakBezoekerTestData();
 
-            // Maak vakken
+            // Maak vakken:
             List<Vak> vakken = MaakVakken();
 
-            // Maak evenement
+            // Maak evenement:
             Evenement evenement = new Evenement("Parcour Eindhoven", vakken);
             Console.WriteLine(evenement.EvenementNaam);
             Console.WriteLine(evenement.MaxAantalBezoekers + " bezoekers welkom\n");
 
-            Vak vakA = vakken[0];
-            Vak vakB = vakken[1];
-            Vak vakC = vakken[2];
-
-            // Bezoekers plaatsen
-            foreach (var bezoeker in bezoekers)
-            {
-                if (vakA.AantalBezoekersInDitVak < vakA.TotaalAantalStoelen)
-                {
-                    vakA.PlaatsBezoeker(bezoeker);
-                }
-                else if (vakB.AantalBezoekersInDitVak < vakB.TotaalAantalStoelen)
-                {
-                    vakB.PlaatsBezoeker(bezoeker);
-                }
-                else if (vakC.AantalBezoekersInDitVak < vakC.TotaalAantalStoelen)
-                {
-                    vakC.PlaatsBezoeker(bezoeker);
-                }
-                else
-                {
-                    EvenementVolBericht(bezoeker);
-                }
-            }
-            Console.WriteLine();
+            // Plaatsbezoekers:
+            evenement.PlaatsBezoekers(bezoekers, vakken);
 
             // UI
             foreach (var vak in vakken)
@@ -198,11 +175,6 @@ namespace VisitorsPlacementTool
                 }
             }
             Console.WriteLine($"Aantal ingeschreven volwassenen: {volwassenen.Count()}");
-        }
-
-        public static void EvenementVolBericht(Bezoeker bezoeker)
-        {
-            Console.WriteLine("Evenement vol! " + bezoeker.Naam + " kon niet worden geplaatst");
         }
     }
 }
