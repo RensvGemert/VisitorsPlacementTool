@@ -18,11 +18,6 @@ namespace VisitorsPlacementTool
             MaxAantalBezoekers = BerekenMaxAantalBezoekers(vakken);
         }
 
-        public void EvenementZitVolBericht()
-        {
-            Console.WriteLine("Evenement zit vol!");
-        }
-
         public int BerekenMaxAantalBezoekers(List<Vak> vakken)
         {
             int MaxAantalBezoekers = 0;
