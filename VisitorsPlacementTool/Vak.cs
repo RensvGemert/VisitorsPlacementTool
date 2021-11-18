@@ -11,6 +11,7 @@ namespace VisitorsPlacementTool
         public string VakLetter { get; set; }
         public List<Rij> rijen = new List<Rij>();
         public int TotaalAantalStoelen;
+        public int AantalBezoekersInDitVak { get; set; }
 
         public Vak()
         {
@@ -58,8 +59,7 @@ namespace VisitorsPlacementTool
             }
         }
 
-
-        public bool PlaatsBezoekerInVak(Bezoeker bezoeker)
+        public bool PlaatsBezoeker(Bezoeker bezoeker)
         {
             if (bezoeker.IsGeplaatst == true)
             {
@@ -69,7 +69,8 @@ namespace VisitorsPlacementTool
             {           
                 if (rij.IsErPlek() == true)
                 {
-                    rij.PlaatsBezoekerInRij(bezoeker);
+                    rij.PlaatsBezoeker(bezoeker);
+                    AantalBezoekersInDitVak++;
                     return true;
                 }
                 // check volgende rij 

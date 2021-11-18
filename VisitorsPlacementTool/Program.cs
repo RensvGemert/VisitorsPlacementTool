@@ -9,9 +9,13 @@ namespace VisitorsPlacementTool
         private static List<Bezoeker> bezoekers = new List<Bezoeker>();
         static void Main(string[] args)
         {
+            // Maak bezoekers
             MaakBezoekerTestData();
 
+            // Maak vakken
             List<Vak> vakken = MaakVakken();
+
+            // Maak evenement
             Evenement evenement = new Evenement("Parcour Eindhoven", vakken);
             Console.WriteLine(evenement.EvenementNaam);
             Console.WriteLine(evenement.MaxAantalBezoekers + " bezoekers welkom\n");
@@ -20,11 +24,24 @@ namespace VisitorsPlacementTool
             Vak vakB = vakken[1];
             Vak vakC = vakken[2];
 
+            // Bezoekers plaatsen
             foreach (var bezoeker in bezoekers)
             {
-                vakA.PlaatsBezoekerInVak(bezoeker);
+                if(vakA.AantalBezoekersInDitVak < vakA.TotaalAantalStoelen)
+                {
+                    vakA.PlaatsBezoeker(bezoeker);
+                }
+                else if(vakB.AantalBezoekersInDitVak < vakB.TotaalAantalStoelen)
+                {
+                    vakB.PlaatsBezoeker(bezoeker);
+                }
+                else
+                {
+                    vakC.PlaatsBezoeker(bezoeker);
+                }                      
             }
 
+            // UI
             foreach (var vak in vakken)
             {
                 Console.WriteLine("Vak: " + vak.VakLetter);
@@ -45,7 +62,6 @@ namespace VisitorsPlacementTool
                 }
                 Console.WriteLine();
             }
-
             Console.WriteLine();
 
             //// Print Vak A:
@@ -82,16 +98,45 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker("Bezoeker05", 11));
             bezoekers.Add(new Bezoeker("Bezoeker06", 23));
             bezoekers.Add(new Bezoeker("Bezoeker07", 43));
-            bezoekers.Add(new Bezoeker("Bezoeker08", 43));
-            bezoekers.Add(new Bezoeker("Bezoeker09", 43));
-            //bezoekers.Add(new Bezoeker("Bezoeker10", 43));
+            bezoekers.Add(new Bezoeker("Bezoeker08", 33));
+            bezoekers.Add(new Bezoeker("Bezoeker09", 11));
+            bezoekers.Add(new Bezoeker("Bezoeker10", 14));
+            bezoekers.Add(new Bezoeker("Bezoeker11", 16));
+            bezoekers.Add(new Bezoeker("Bezoeker12", 53));
+            bezoekers.Add(new Bezoeker("Bezoeker13", 30));
+            bezoekers.Add(new Bezoeker("Bezoeker14", 41));
+            bezoekers.Add(new Bezoeker("Bezoeker15", 44));
+            bezoekers.Add(new Bezoeker("Bezoeker16", 49));
+            bezoekers.Add(new Bezoeker("Bezoeker17", 15));
+            bezoekers.Add(new Bezoeker("Bezoeker18", 12));
+            bezoekers.Add(new Bezoeker("Bezoeker19", 11));
+            bezoekers.Add(new Bezoeker("Bezoeker20", 6));
+            bezoekers.Add(new Bezoeker("Bezoeker21", 8));
+            bezoekers.Add(new Bezoeker("Bezoeker22", 27));
+            bezoekers.Add(new Bezoeker("Bezoeker23", 26));
+            bezoekers.Add(new Bezoeker("Bezoeker24", 28));
+            bezoekers.Add(new Bezoeker("Bezoeker25", 50));
+            bezoekers.Add(new Bezoeker("Bezoeker26", 56));
+            bezoekers.Add(new Bezoeker("Bezoeker27", 55));
+            bezoekers.Add(new Bezoeker("Bezoeker28", 35));
+            bezoekers.Add(new Bezoeker("Bezoeker29", 37));
+            bezoekers.Add(new Bezoeker("Bezoeker30", 72));
+            bezoekers.Add(new Bezoeker("Bezoeker31", 77));
+            bezoekers.Add(new Bezoeker("Bezoeker32", 19));
+            bezoekers.Add(new Bezoeker("Bezoeker33", 22));
+            bezoekers.Add(new Bezoeker("Bezoeker34", 80));
+            bezoekers.Add(new Bezoeker("Bezoeker36", 63));
+            bezoekers.Add(new Bezoeker("Bezoeker37", 33));
+            bezoekers.Add(new Bezoeker("Bezoeker38", 23));
+            bezoekers.Add(new Bezoeker("Bezoeker39", 38));
+            bezoekers.Add(new Bezoeker("Bezoeker40", 40));
         }
 
         private static List<Vak> MaakVakken()
         {
             List<Vak> Vakken = new List<Vak>();
             Vak vakA = new Vak("A", 3, 5);
-            Vak vakB = new Vak("B", 3, 5);
+            Vak vakB = new Vak("B", 3, 7);
             Vak vakC = new Vak("C", 3, 5);
 
             Vakken.Add(vakA);

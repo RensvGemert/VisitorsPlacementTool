@@ -16,7 +16,7 @@ namespace VisitorsPlacementTool
             StoelCode = stoelCode;
         }
 
-        public void PlaatsBezoekerOpStoel(Bezoeker bezoeker)
+        public void PlaatsBezoeker(Bezoeker bezoeker)
         {
             Bezoeker = bezoeker;
         }

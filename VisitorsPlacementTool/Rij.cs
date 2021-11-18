@@ -30,13 +30,13 @@ namespace VisitorsPlacementTool
             return false;
         }
 
-        public bool PlaatsBezoekerInRij(Bezoeker bezoeker)
+        public bool PlaatsBezoeker(Bezoeker bezoeker)
         {
             foreach (var stoel in Stoelen)
             {
                 if(stoel.Bezoeker == null)
                 {
-                    stoel.PlaatsBezoekerOpStoel(bezoeker);
+                    stoel.PlaatsBezoeker(bezoeker);
                     return true;
                 }              
             }
