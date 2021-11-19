@@ -9,22 +9,16 @@ using System.Threading.Tasks;
 namespace VisitorsPlacementTool.Tests
 {
     [TestClass()]
-    public class VakTests
+    public class Vak_Stoelen_Tests
     {
         [TestMethod()]
-        public void MaakRijenTest()
+        public void BerekenAantalStoelenPerVakTest_AreEqual()
         {
-            Vak vak = new Vak();
+            Vak vak = new Vak("A", 3, 5);           
 
-            try
-            {
-                vak.MaakRijen(2, 5);
-                Assert.IsTrue(true);
-            }
-            catch
-            {
-                Assert.IsTrue(false);
-            }
+            int resultaat = vak.BerekenAantalStoelenPerVak(3, 5);
+            int verwachtResultaat = 15;
+            Assert.AreEqual(verwachtResultaat, resultaat);
         }
     }
 }

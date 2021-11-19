@@ -20,17 +20,5 @@ namespace VisitorsPlacementTool
         {
             Bezoeker = bezoeker;
         }
-
-        //public override string ToString()
-        //{
-        //    if (Bezoeker != null)
-        //    {
-        //        return StoelCode + " " + Bezoeker.Naam + " Leeftijd: " + Bezoeker.Leeftijd;
-        //    }
-        //    else
-        //    {
-        //        return StoelCode;
-        //    }
-        //}
     }
 }
