@@ -23,7 +23,7 @@ namespace VisitorsPlacementTool
             int MaxAantalBezoekers = 0;
             foreach (var vak in vakken)
             {
-                MaxAantalBezoekers = MaxAantalBezoekers + vak.TotaalAantalStoelen;
+                MaxAantalBezoekers += vak.TotaalAantalStoelen;
             }
             return MaxAantalBezoekers;
         }
