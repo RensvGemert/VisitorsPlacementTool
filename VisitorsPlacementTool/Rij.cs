@@ -44,5 +44,3 @@ namespace VisitorsPlacementTool
         }
     }
 }
-
-//&& bezoeker.IsKind() != true
