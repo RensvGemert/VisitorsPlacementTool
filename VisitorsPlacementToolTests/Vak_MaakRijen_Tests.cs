@@ -12,16 +12,14 @@ namespace VisitorsPlacementTool.Tests
     public class Vak_MaakRijen_Tests
     {
         [TestMethod()]
-        public void Maak_Rijen_Test_AreEqual()
+        public void Maak_Rijen_Test_Aantal_AreEqual()
         {
             Vak vak = new Vak();
             vak.MaakRijen(2, 5);
 
-            // act
             int VerwachtResultaat = 2;
             int Resultaat = vak.rijen.Count;
             
-            // assert
             Assert.AreEqual(VerwachtResultaat, Resultaat);
         }
 

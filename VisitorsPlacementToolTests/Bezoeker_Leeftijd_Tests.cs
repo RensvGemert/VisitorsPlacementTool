@@ -14,26 +14,20 @@ namespace VisitorsPlacementTool.Tests
         [TestMethod()]
         public void CheckIsKind_Is_False()
         {
-            // arrange
             Bezoeker bezoeker = new Bezoeker("Rens", 13);
 
-            // act
             bool isKind = bezoeker.IsKind();
 
-            // assert
             Assert.IsFalse(isKind);
         }
 
         [TestMethod()]
         public void CheckIsKind_Is_True()
         {
-            // arrange
             Bezoeker bezoeker = new Bezoeker("Rens", 12);
 
-            // act
             bool isKind = bezoeker.IsKind();
 
-            // assert
             Assert.IsTrue(isKind);
         }
     }
