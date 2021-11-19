@@ -28,7 +28,6 @@ namespace VisitorsPlacementTool
             return MaxAantalBezoekers;
         }
 
-
         public void PlaatsBezoekers(List<Bezoeker> bezoekers, List<Vak> vakken)
         {
             Vak vakA = vakken[0];

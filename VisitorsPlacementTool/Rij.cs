@@ -16,8 +16,9 @@ namespace VisitorsPlacementTool
         {
             AantalRijen = aantalRijen;
             Stoelen = aantalStoelenPerRij;
-            MaxStoelenPerRij = aantalStoelenPerRij.Count();
+            MaxStoelenPerRij = aantalStoelenPerRij.Count;
         }
+
         public bool IsErPlek()
         {
             foreach (var stoel in Stoelen)

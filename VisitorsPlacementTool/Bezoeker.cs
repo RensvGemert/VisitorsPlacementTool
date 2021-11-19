@@ -13,18 +13,18 @@ namespace VisitorsPlacementTool
 
         public bool IsGeplaatst = false;
 
-        private int MinimumLeeftijd = 12;
+        private readonly int _minimumLeeftijd = 12;
 
         public Bezoeker(string naam, int leeftijd)
         {
-            this.Naam = naam;
-            this.Leeftijd = leeftijd;
-            this.IsGeplaatst = false;
+            Naam = naam;
+            Leeftijd = leeftijd;
+            IsGeplaatst = false;
         }
 
         public bool IsKind()
         {
-            if (this.Leeftijd <= MinimumLeeftijd)
+            if (Leeftijd <= _minimumLeeftijd)
             {          
                 return true;
             }
