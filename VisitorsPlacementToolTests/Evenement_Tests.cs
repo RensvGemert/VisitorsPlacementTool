@@ -42,5 +42,56 @@ namespace VisitorsPlacementTool.Tests
 
             Assert.AreNotEqual(foutResultaat, resultaat);
         }
+
+        [TestMethod()]
+        public void PlaatsBezoekersTest_AreEqual()
+        {
+            List<Bezoeker> bezoekers = new List<Bezoeker>();
+            bezoekers.Add(new Bezoeker("TestBezoeker01", 21));
+            bezoekers.Add(new Bezoeker("TestBezoeker02", 22));
+
+            List<Vak> vakken = new List<Vak>();
+            Vak VakA = new Vak("A", 1, 5);
+            Vak VakB = new Vak("B", 1, 5);
+            Vak VakC = new Vak("C", 1, 5);
+            vakken.Add(VakA);
+            vakken.Add(VakB);
+            vakken.Add(VakC);
+
+
+            Evenement evenement = new Evenement("TestEvenement", vakken);
+            evenement.PlaatsBezoekers(bezoekers, vakken);
+
+            int resultaat = VakA.AantalBezoekersInDitVak;
+            int verwachtresultaat = 2;
+
+            Assert.AreEqual(verwachtresultaat, resultaat);
+        }
+
+        [TestMethod()]
+        public void PlaatsBezoekersTest_AreNotEqual()
+        {
+            List<Bezoeker> bezoekers = new List<Bezoeker>();
+            bezoekers.Add(new Bezoeker("TestBezoeker01", 21));
+            bezoekers.Add(new Bezoeker("TestBezoeker02", 22));
+
+            List<Vak> vakken = new List<Vak>();
+            Vak VakA = new Vak("A", 1, 5);
+            Vak VakB = new Vak("B", 1, 5);
+            Vak VakC = new Vak("C", 1, 5);
+            vakken.Add(VakA);
+            vakken.Add(VakB);
+            vakken.Add(VakC);
+
+
+            Evenement evenement = new Evenement("TestEvenement", vakken);
+            evenement.PlaatsBezoekers(bezoekers, vakken);
+
+            int resultaat = VakA.AantalBezoekersInDitVak;
+            int verwachtresultaat = 1;
+
+            Assert.AreNotEqual(verwachtresultaat, resultaat);
+        }
+
     }
 }
