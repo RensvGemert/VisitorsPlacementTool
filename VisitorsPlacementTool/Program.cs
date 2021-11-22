@@ -79,30 +79,16 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker("Bezoeker21", 8));
             bezoekers.Add(new Bezoeker("Bezoeker22", 27));
             bezoekers.Add(new Bezoeker("Bezoeker23", 26));
-            bezoekers.Add(new Bezoeker("Bezoeker24", 28));
-            bezoekers.Add(new Bezoeker("Bezoeker25", 50));
-            bezoekers.Add(new Bezoeker("Bezoeker26", 56));
-            bezoekers.Add(new Bezoeker("Bezoeker27", 55));
-            bezoekers.Add(new Bezoeker("Bezoeker28", 35));
-            //bezoekers.Add(new Bezoeker("Bezoeker29", 37));
-            //bezoekers.Add(new Bezoeker("Bezoeker30", 72));
-            //bezoekers.Add(new Bezoeker("Bezoeker31", 77));
-            //bezoekers.Add(new Bezoeker("Bezoeker32", 19));
-            //bezoekers.Add(new Bezoeker("Bezoeker33", 22));
-            //bezoekers.Add(new Bezoeker("Bezoeker34", 80));
-            //bezoekers.Add(new Bezoeker("Bezoeker36", 63));
-            //bezoekers.Add(new Bezoeker("Bezoeker37", 33));
-            //bezoekers.Add(new Bezoeker("Bezoeker38", 23));
-            //bezoekers.Add(new Bezoeker("Bezoeker39", 38));
-            //bezoekers.Add(new Bezoeker("Bezoeker40", 40));
+            bezoekers.Add(new Bezoeker("Bezoeker24", 22));
+            bezoekers.Add(new Bezoeker("Bezoeker25", 26));
         }
 
         private static List<Vak> MaakVakken()
         {
             List<Vak> Vakken = new List<Vak>();
             Vak vakA = new Vak("A", 3, 5);
-            Vak vakB = new Vak("B", 3, 5);
-            Vak vakC = new Vak("C", 3, 5);
+            Vak vakB = new Vak("B", 1, 3);
+            Vak vakC = new Vak("C", 2, 3);
 
             Vakken.Add(vakA);
             Vakken.Add(vakB);
