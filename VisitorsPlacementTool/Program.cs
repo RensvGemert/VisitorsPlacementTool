@@ -100,9 +100,9 @@ namespace VisitorsPlacementTool
         private static List<Vak> MaakVakken()
         {
             List<Vak> Vakken = new List<Vak>();
-            Vak vakA = new Vak("A", 3, 3);
-            Vak vakB = new Vak("B", 3, 3);
-            Vak vakC = new Vak("C", 3, 3);
+            Vak vakA = new Vak("A", 3, 5);
+            Vak vakB = new Vak("B", 3, 5);
+            Vak vakC = new Vak("C", 3, 5);
 
             Vakken.Add(vakA);
             Vakken.Add(vakB);
