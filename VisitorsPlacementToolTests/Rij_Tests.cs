@@ -39,5 +39,47 @@ namespace VisitorsPlacementTool.Tests
             bool result = rij.IsErPlek();
             Assert.IsFalse(result);
         }
+
+
+        [TestMethod()]
+        public void PlaatsBezoekerTest_IsTrue()
+        {
+            // arrange
+            Bezoeker bezoeker01 = new Bezoeker("TestBezoeker01", 12);
+            Bezoeker bezoeker02 = new Bezoeker("TestBezoeker02", 12);
+            Bezoeker bezoeker03 = new Bezoeker("TestBezoeker03", 12);
+            List<Stoel> stoelen = new List<Stoel>();
+            stoelen.Add(new Stoel("A1-1"));
+            stoelen.Add(new Stoel("A1-2"));
+            stoelen.Add(new Stoel("A1-3"));
+            Rij rij = new Rij(1, stoelen);
+
+            // act
+            rij.PlaatsBezoeker(bezoeker01);
+            rij.PlaatsBezoeker(bezoeker02);
+            
+            Assert.IsTrue(rij.IsErPlek());
+        }
+
+        [TestMethod()]
+        public void PlaatsBezoekerTest_IsFalse()
+        {
+            // arrange
+            Bezoeker bezoeker01 = new Bezoeker("TestBezoeker01", 12);
+            Bezoeker bezoeker02 = new Bezoeker("TestBezoeker02", 12);
+            Bezoeker bezoeker03 = new Bezoeker("TestBezoeker03", 12);
+            List<Stoel> stoelen = new List<Stoel>();
+            stoelen.Add(new Stoel("A1-1"));
+            stoelen.Add(new Stoel("A1-2"));
+            stoelen.Add(new Stoel("A1-3"));
+            Rij rij = new Rij(1, stoelen);
+
+            // act
+            rij.PlaatsBezoeker(bezoeker01);
+            rij.PlaatsBezoeker(bezoeker02);
+            rij.PlaatsBezoeker(bezoeker03);
+
+            Assert.IsFalse(rij.IsErPlek());
+        }
     }
 }
