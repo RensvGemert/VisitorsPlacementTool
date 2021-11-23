@@ -24,6 +24,18 @@ namespace VisitorsPlacementTool
             evenement.PlaatsBezoekers(bezoekers, vakken);
 
             // UI
+            RenderUI(vakken);
+
+            //BerekenAantalBezoekers();
+            //BerekenAantalKinderen(bezoekers);
+            //BerekenAantalVolwassenen(bezoekers);
+            //ToonAlleBezoekers();
+            //ToonAlleKinderen();
+            //ToonAlleVolwassenen();
+        }
+        
+        private static void RenderUI(List<Vak> vakken)
+        {
             foreach (var vak in vakken)
             {
                 Console.WriteLine("Vak: " + vak.VakLetter);
@@ -45,13 +57,6 @@ namespace VisitorsPlacementTool
                 Console.WriteLine();
             }
             Console.WriteLine();
-
-            //BerekenAantalBezoekers();
-            //BerekenAantalKinderen(bezoekers);
-            //BerekenAantalVolwassenen(bezoekers);
-            //ToonAlleBezoekers();
-            //ToonAlleKinderen();
-            //ToonAlleVolwassenen();
         }
 
         private static void MaakBezoekerTestData()
@@ -86,9 +91,9 @@ namespace VisitorsPlacementTool
         private static List<Vak> MaakVakken()
         {
             List<Vak> Vakken = new List<Vak>();
-            Vak vakA = new Vak("A", 3, 5);
-            Vak vakB = new Vak("B", 1, 3);
-            Vak vakC = new Vak("C", 2, 3);
+            Vak vakA = new Vak("A", 1, 3);
+            Vak vakB = new Vak("B", 2, 3);
+            Vak vakC = new Vak("C", 3, 5);
 
             Vakken.Add(vakA);
             Vakken.Add(vakB);
