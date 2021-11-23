@@ -17,8 +17,7 @@ namespace VisitorsPlacementTool
 
             // Maak evenement:
             Evenement evenement = new Evenement("Parcour Eindhoven", vakken);
-            Console.WriteLine(evenement.EvenementNaam);
-            Console.WriteLine(evenement.MaxAantalBezoekers + " bezoekers welkom\n");
+            evenement.RenderDetails();
 
             // Plaatsbezoekers:
             evenement.PlaatsBezoekers(bezoekers, vakken);
@@ -32,31 +31,6 @@ namespace VisitorsPlacementTool
             //ToonAlleBezoekers();
             //ToonAlleKinderen();
             //ToonAlleVolwassenen();
-        }
-        
-        private static void RenderUI(List<Vak> vakken)
-        {
-            foreach (var vak in vakken)
-            {
-                Console.WriteLine("Vak: " + vak.VakLetter);
-                foreach (var rij in vak.rijen)
-                {
-                    foreach (var stoel in rij.Stoelen)
-                    {
-                        if (stoel.Bezoeker != null)
-                        {
-                            Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
-                        }
-                        else
-                        {
-                            Console.WriteLine(stoel.StoelCode);
-                        }
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
         }
 
         private static void MaakBezoekerTestData()
@@ -99,6 +73,31 @@ namespace VisitorsPlacementTool
             Vakken.Add(vakB);
             Vakken.Add(vakC);
             return Vakken;
+        }
+
+        private static void RenderUI(List<Vak> vakken)
+        {
+            foreach (var vak in vakken)
+            {
+                Console.WriteLine("Vak: " + vak.VakLetter);
+                foreach (var rij in vak.rijen)
+                {
+                    foreach (var stoel in rij.Stoelen)
+                    {
+                        if (stoel.Bezoeker != null)
+                        {
+                            Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
+                        }
+                        else
+                        {
+                            Console.WriteLine(stoel.StoelCode);
+                        }
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
         }
 
         private static void ToonAlleBezoekers()

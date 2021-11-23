@@ -55,6 +55,12 @@ namespace VisitorsPlacementTool
             }
         }
 
+        public void RenderDetails()
+        {
+            Console.WriteLine(EvenementNaam);
+            Console.WriteLine(MaxAantalBezoekers + " bezoekers welkom\n");
+        }
+
         public void EvenementVolBericht(Bezoeker bezoeker)
         {
             Console.WriteLine(bezoeker.Naam + " kon niet worden geplaatst, evenement zit vol!");
