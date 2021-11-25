@@ -25,7 +25,8 @@ namespace VisitorsPlacementTool
             // UI
             RenderUI(vakken);
 
-            //Console.WriteLine(vakken[0].rijen[0].Stoelen[0].StoelCode + " " + vakken[0].rijen[0].Stoelen[0].Bezoeker.Naam);
+            //Console.WriteLine(vakken[0].rijen[0].Stoelen[0].StoelCode);
+            //Console.WriteLine(vakken[0].rijen[0].Stoelen[0].Bezoeker.Naam); 
             //BerekenAantalBezoekers();
             //BerekenAantalKinderen(bezoekers);
             //BerekenAantalVolwassenen(bezoekers);
