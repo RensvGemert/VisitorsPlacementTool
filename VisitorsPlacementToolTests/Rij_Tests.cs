@@ -14,12 +14,13 @@ namespace VisitorsPlacementTool.Tests
         [TestMethod()]
         public void IsErPlekTest_IsTrue()
         {
+            Bezoeker bezoeker = new Bezoeker("Rens", 23);
             List<Stoel> stoelen = new List<Stoel>();
             stoelen.Add(new Stoel("stoel1"));
 
             Rij rij = new Rij(3, stoelen);
 
-            bool result = rij.IsErPlek();
+            bool result = rij.IsErPlek(bezoeker);
             Assert.IsTrue(result);
         }
 
@@ -36,7 +37,7 @@ namespace VisitorsPlacementTool.Tests
 
             Rij rij = new Rij(3, stoelen);
 
-            bool result = rij.IsErPlek();
+            bool result = rij.IsErPlek(testBezoeker);
             Assert.IsFalse(result);
         }
 
@@ -58,7 +59,7 @@ namespace VisitorsPlacementTool.Tests
             rij.PlaatsBezoeker(bezoeker01, rij.RijId);
             rij.PlaatsBezoeker(bezoeker02, rij.RijId);
             
-            Assert.IsTrue(rij.IsErPlek());
+            Assert.IsTrue(rij.IsErPlek(bezoeker01));
         }
 
         [TestMethod()]
@@ -79,7 +80,7 @@ namespace VisitorsPlacementTool.Tests
             rij.PlaatsBezoeker(bezoeker02, rij.RijId);
             rij.PlaatsBezoeker(bezoeker03, rij.RijId);
 
-            Assert.IsFalse(rij.IsErPlek());
+            Assert.IsFalse(rij.IsErPlek(bezoeker01));
         }
     }
 }
