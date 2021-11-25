@@ -54,27 +54,31 @@ namespace VisitorsPlacementTool
             else
             {
                 throw new InvalidOperationException("Vak te groot!");
-            }
-           
+            }      
         }
 
         public bool PlaatsBezoeker(Bezoeker bezoeker)
-        {
+        {    
             if (bezoeker.IsGeplaatst == true)
             {
                 return false;
             }
             foreach (var rij in rijen)
-            {           
-                if (rij.IsErPlek() == true)
-                {
-                    rij.PlaatsBezoeker(bezoeker);
-                    AantalBezoekersInDitVak++;
-                    return true;
-                }
+            {
+                   if (rij.IsErPlek(bezoeker) == true)
+                   {
+                      rij.PlaatsBezoeker(bezoeker, rij.RijId);
+                      AantalBezoekersInDitVak++;
+                      return true;
+                   }
                 // check volgende rij 
             }
             return false;
+        }
+
+        public bool IsErPlekOpRij1(Bezoeker bezoeker)
+        {
+            return rijen[0].IsErPlek(bezoeker);        
         }
     }
 }

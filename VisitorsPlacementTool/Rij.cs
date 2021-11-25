@@ -8,59 +8,49 @@ namespace VisitorsPlacementTool
 {
     public class Rij
     {
-        public int AantalRijen { get; set; }
+        public int RijId { get; set; }
+        //public int AantalRijen { get; set; }
         public List<Stoel> Stoelen { get; set; }
         public int MaxStoelenPerRij { get; set; }
+       
 
-        public Rij(int aantalRijen, List<Stoel> aantalStoelenPerRij)
+        public Rij(int rijId, List<Stoel> aantalStoelenPerRij)
         {
-            AantalRijen = aantalRijen;
+            //AantalRijen = aantalRijen;
+            RijId = rijId;
             Stoelen = aantalStoelenPerRij;
             MaxStoelenPerRij = aantalStoelenPerRij.Count;
         }
 
-        public bool IsErPlek()
-        {
+        public bool IsErPlek(Bezoeker bezoeker)
+        {     
             foreach (var stoel in Stoelen)
             {
                 if (stoel.Bezoeker == null)
                 {
-                    return true;
+                        return true;
                 }
-            }
+            }           
             return false;
         }
 
-        public bool IsErPlekOpRij1()
-        {
-             if (AantalRijen > 0 && AantalRijen < 2)
-             {
-                  foreach (var stoel in Stoelen)
-                  {
-                      if(stoel.Bezoeker == null)
-                      {
-                          return true;
-                      }
-                  }
-             }               
-            return false;
-        }
-
-        public bool PlaatsBezoeker(Bezoeker bezoeker)
-        {
+        public bool PlaatsBezoeker(Bezoeker bezoeker, int rijId)
+        {          
             foreach (var stoel in Stoelen)
             {
-                if (bezoeker.IsKind() == true && IsErPlekOpRij1() == true)
+                if (stoel.Bezoeker == null)
                 {
-                    stoel.PlaatsBezoeker(bezoeker);
-                    return true;
-                }
-
-                else if (bezoeker.IsKind() == false && stoel.Bezoeker == null)
-                {
-                    stoel.PlaatsBezoeker(bezoeker);
-                    return true;
-                }                  
+                    if (bezoeker.IsKind() == true && rijId == 1 && stoel.Bezoeker == null)
+                    {
+                        stoel.PlaatsBezoeker(bezoeker);
+                        return true;
+                    }
+                    else if (bezoeker.IsKind() == false && stoel.Bezoeker == null)
+                    {
+                        stoel.PlaatsBezoeker(bezoeker);
+                        return true;
+                    }
+                }            
             }
             return false;
         }

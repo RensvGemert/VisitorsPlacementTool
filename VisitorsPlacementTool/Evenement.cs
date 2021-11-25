@@ -30,29 +30,24 @@ namespace VisitorsPlacementTool
 
         public void PlaatsBezoekers(List<Bezoeker> bezoekers, List<Vak> vakken)
         {
-            Vak vakA = vakken[0];
-            Vak vakB = vakken[1];
-            Vak vakC = vakken[2];
-
             foreach (var bezoeker in bezoekers)
             {
-                if (vakA.AantalBezoekersInDitVak < vakA.TotaalAantalStoelen)
+                for (int i = 0; i < vakken.Count; i++)
                 {
-                    vakA.PlaatsBezoeker(bezoeker);
+                    if ((bezoeker.IsKind() && vakken[i].IsErPlekOpRij1(bezoeker)) || !bezoeker.IsKind())
+                    {
+                        if (vakken[i].AantalBezoekersInDitVak < vakken[i].TotaalAantalStoelen)
+                        {
+                            bezoeker.IsGeplaatst = vakken[i].PlaatsBezoeker(bezoeker);                           
+                            break;
+                        }
+                    }                
                 }
-                else if (vakB.AantalBezoekersInDitVak < vakB.TotaalAantalStoelen)
-                {
-                    vakB.PlaatsBezoeker(bezoeker);
-                }
-                else if (vakC.AantalBezoekersInDitVak < vakC.TotaalAantalStoelen)
-                {
-                    vakC.PlaatsBezoeker(bezoeker);
-                }
-                else
+                if (!bezoeker.IsGeplaatst)
                 {
                     EvenementVolBericht(bezoeker);
-                }
-            }
+                }        
+            }      
         }
 
         public void RenderDetails()

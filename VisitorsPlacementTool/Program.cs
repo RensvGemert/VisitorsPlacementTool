@@ -26,7 +26,7 @@ namespace VisitorsPlacementTool
             RenderUI(vakken);
 
             //Console.WriteLine(vakken[0].rijen[0].Stoelen[0].StoelCode);
-            //Console.WriteLine(vakken[0].rijen[0].Stoelen[0].Bezoeker.Naam); 
+            //Console.WriteLine(vakken[0].rijen[0].Stoelen[0].Bezoeker.Naam);
             //BerekenAantalBezoekers();
             //BerekenAantalKinderen(bezoekers);
             //BerekenAantalVolwassenen(bezoekers);
@@ -37,28 +37,37 @@ namespace VisitorsPlacementTool
 
         private static void MaakBezoekerTestData()
         {
-            bezoekers.Add(new Bezoeker("Kind01", 11));
-            bezoekers.Add(new Bezoeker("Volwassenen01", 22));
-            bezoekers.Add(new Bezoeker("Kind02", 11));
-            bezoekers.Add(new Bezoeker("Kind03", 10));
-            bezoekers.Add(new Bezoeker("Kind04", 11));
-            bezoekers.Add(new Bezoeker("Volwassenen02", 23));
-            bezoekers.Add(new Bezoeker("Volwassenen03", 43));
-            bezoekers.Add(new Bezoeker("Volwassenen04", 33));
-            bezoekers.Add(new Bezoeker("Kind05", 11));
-            bezoekers.Add(new Bezoeker("Kind06", 14));
-            bezoekers.Add(new Bezoeker("Kind07", 16));
-            bezoekers.Add(new Bezoeker("Volwassenen05", 53));
-            bezoekers.Add(new Bezoeker("Volwassenen06", 30));
-            bezoekers.Add(new Bezoeker("Volwassenen07", 41));
+            bezoekers.Add(new Bezoeker("Kind1", 11));
+            bezoekers.Add(new Bezoeker("Kind2", 11));        
+            bezoekers.Add(new Bezoeker("Kind3", 11));
+            bezoekers.Add(new Bezoeker("Kind4", 11));
+            bezoekers.Add(new Bezoeker("Kind5", 11));
+            bezoekers.Add(new Bezoeker("Kind6", 11));
+            bezoekers.Add(new Bezoeker("Kind7", 11));
+            bezoekers.Add(new Bezoeker("Kind8", 11));
+            bezoekers.Add(new Bezoeker("Kind9", 11));
+            bezoekers.Add(new Bezoeker("Kind10", 11));
+            bezoekers.Add(new Bezoeker("Volwassenen1", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen2", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen3", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen4", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen5", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen6", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen7", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen8", 22));
+            bezoekers.Add(new Bezoeker("Kind11", 11));
+            bezoekers.Add(new Bezoeker("Kind12", 11));
+            bezoekers.Add(new Bezoeker("Kind13", 11));
+            bezoekers.Add(new Bezoeker("Kind14", 11));
+
         }
 
         private static List<Vak> MaakVakken()
         {
             List<Vak> Vakken = new List<Vak>();
-            Vak vakA = new Vak("A", 1, 3);
-            Vak vakB = new Vak("B", 2, 3);
-            Vak vakC = new Vak("C", 3, 5);
+            Vak vakA = new Vak("A", 3, 3);
+            Vak vakB = new Vak("B", 3, 3);
+            Vak vakC = new Vak("C", 3, 3);
 
             Vakken.Add(vakA);
             Vakken.Add(vakB);

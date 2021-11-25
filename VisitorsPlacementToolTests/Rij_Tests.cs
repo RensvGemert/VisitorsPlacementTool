@@ -55,8 +55,8 @@ namespace VisitorsPlacementTool.Tests
             Rij rij = new Rij(1, stoelen);
 
             // act
-            rij.PlaatsBezoeker(bezoeker01);
-            rij.PlaatsBezoeker(bezoeker02);
+            rij.PlaatsBezoeker(bezoeker01, rij.RijId);
+            rij.PlaatsBezoeker(bezoeker02, rij.RijId);
             
             Assert.IsTrue(rij.IsErPlek());
         }
@@ -75,9 +75,9 @@ namespace VisitorsPlacementTool.Tests
             Rij rij = new Rij(1, stoelen);
 
             // act
-            rij.PlaatsBezoeker(bezoeker01);
-            rij.PlaatsBezoeker(bezoeker02);
-            rij.PlaatsBezoeker(bezoeker03);
+            rij.PlaatsBezoeker(bezoeker01, rij.RijId);
+            rij.PlaatsBezoeker(bezoeker02, rij.RijId);
+            rij.PlaatsBezoeker(bezoeker03, rij.RijId);
 
             Assert.IsFalse(rij.IsErPlek());
         }
