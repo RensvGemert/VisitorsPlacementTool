@@ -16,7 +16,7 @@ namespace VisitorsPlacementTool
             List<Vak> vakken = MaakVakken();
 
             // Maak evenement:
-            Evenement evenement = new Evenement("Parcour Eindhoven", vakken);
+            Evenement evenement = new Evenement("Parcour Eindhoven", vakken);           
             evenement.RenderDetails();
 
             // Plaatsbezoekers:
@@ -59,6 +59,19 @@ namespace VisitorsPlacementTool
             bezoekers.Add(new Bezoeker("Kind12", 11));
             bezoekers.Add(new Bezoeker("Kind13", 11));
             bezoekers.Add(new Bezoeker("Kind14", 11));
+            bezoekers.Add(new Bezoeker("Volwassene9", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen10", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen11", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen12", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen13", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen14", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen15", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen16", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen17", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen18", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen19", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen20", 22));
+            bezoekers.Add(new Bezoeker("Volwassenen21", 22));
 
         }
 
