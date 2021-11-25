@@ -31,15 +31,36 @@ namespace VisitorsPlacementTool
             return false;
         }
 
+        public bool IsErPlekOpRij1()
+        {
+             if (AantalRijen > 0 && AantalRijen < 2)
+             {
+                  foreach (var stoel in Stoelen)
+                  {
+                      if(stoel.Bezoeker == null)
+                      {
+                          return true;
+                      }
+                  }
+             }               
+            return false;
+        }
+
         public bool PlaatsBezoeker(Bezoeker bezoeker)
         {
             foreach (var stoel in Stoelen)
             {
-                if(stoel.Bezoeker == null)
+                if (bezoeker.IsKind() == true && IsErPlekOpRij1() == true)
                 {
                     stoel.PlaatsBezoeker(bezoeker);
                     return true;
-                }              
+                }
+
+                else if (bezoeker.IsKind() == false && stoel.Bezoeker == null)
+                {
+                    stoel.PlaatsBezoeker(bezoeker);
+                    return true;
+                }                  
             }
             return false;
         }
