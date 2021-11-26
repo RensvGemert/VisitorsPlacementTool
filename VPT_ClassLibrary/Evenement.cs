@@ -50,6 +50,31 @@ namespace Domain
             }
         }
 
+        public void ToonEvenementOverzicht(List<Vak> vakken)
+        {
+            foreach (var vak in vakken)
+            {
+                Console.WriteLine("Vak: " + vak.VakLetter);
+                foreach (var rij in vak.rijen)
+                {
+                    foreach (var stoel in rij.Stoelen)
+                    {
+                        if (stoel.Bezoeker != null)
+                        {
+                            Console.WriteLine(stoel.StoelCode + " " + stoel.Bezoeker.Naam);
+                        }
+                        else
+                        {
+                            Console.WriteLine(stoel.StoelCode);
+                        }
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
         public void RenderDetails()
         {
             Console.WriteLine(EvenementNaam);
