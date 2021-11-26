@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VisitorsPlacementTool
+namespace Domain
 {
     public class Evenement
-    {    
-        public string EvenementNaam { get; set; } 
+    {
+        public string EvenementNaam { get; set; }
         public int MaxAantalBezoekers { get; set; }
         public List<Vak> Vakken = new List<Vak>();
 
@@ -38,16 +38,16 @@ namespace VisitorsPlacementTool
                     {
                         if (vakken[i].AantalBezoekersInDitVak < vakken[i].TotaalAantalStoelen)
                         {
-                            bezoeker.IsGeplaatst = vakken[i].PlaatsBezoeker(bezoeker);                           
+                            bezoeker.IsGeplaatst = vakken[i].PlaatsBezoeker(bezoeker);
                             break;
                         }
-                    }                
+                    }
                 }
                 if (!bezoeker.IsGeplaatst)
                 {
                     EvenementVolBericht(bezoeker);
-                }        
-            }      
+                }
+            }
         }
 
         public void RenderDetails()

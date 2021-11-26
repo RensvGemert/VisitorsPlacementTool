@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VisitorsPlacementTool
+namespace Domain
 {
     public class Bezoeker
     {
@@ -25,7 +25,7 @@ namespace VisitorsPlacementTool
         public bool IsKind()
         {
             if (Leeftijd <= _minimumLeeftijd)
-            {          
+            {
                 return true;
             }
             else

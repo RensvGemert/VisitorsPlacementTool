@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorsPlacementTool", "VisitorsPlacementTool\VisitorsPlacementTool.csproj", "{2B9B6019-0616-4C10-A64E-4A4E69A03863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "VisitorsPlacementTool\UI.csproj", "{2B9B6019-0616-4C10-A64E-4A4E69A03863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorsPlacementToolTests", "VisitorsPlacementToolTests\VisitorsPlacementToolTests.csproj", "{7D985EC4-F281-4408-827F-A44FA64DAE4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorsPlacementToolTests", "VisitorsPlacementToolTests\VisitorsPlacementToolTests.csproj", "{7D985EC4-F281-4408-827F-A44FA64DAE4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "VPT_ClassLibrary\Domain.csproj", "{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorsPlacementDAL", "VisitorsPlacementDAL\VisitorsPlacementDAL.csproj", "{5B5054BD-A550-4406-985B-03956BD82502}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorsPlacementLogic", "VisitorsPlacementLogic\VisitorsPlacementLogic.csproj", "{7A6BE568-B64C-40E7-8706-095E59CCB35A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{7D985EC4-F281-4408-827F-A44FA64DAE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D985EC4-F281-4408-827F-A44FA64DAE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D985EC4-F281-4408-827F-A44FA64DAE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5054BD-A550-4406-985B-03956BD82502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5054BD-A550-4406-985B-03956BD82502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5054BD-A550-4406-985B-03956BD82502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5054BD-A550-4406-985B-03956BD82502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

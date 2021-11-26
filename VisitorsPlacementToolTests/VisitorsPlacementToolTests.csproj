@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VisitorsPlacementTool\VisitorsPlacementTool.csproj" />
+    <ProjectReference Include="..\VisitorsPlacementTool\UI.csproj" />
   </ItemGroup>
 
 </Project>

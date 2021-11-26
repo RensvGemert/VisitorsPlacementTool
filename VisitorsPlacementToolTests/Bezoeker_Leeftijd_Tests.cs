@@ -1,12 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VisitorsPlacementTool;
+using UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
-namespace VisitorsPlacementTool.Tests
+namespace UI.Tests
 {
     [TestClass()]
     public class Bezoeker_Leeftijd_Tests

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VisitorsPlacementTool
+namespace Domain
 {
     public class Vak
     {
@@ -48,29 +48,29 @@ namespace VisitorsPlacementTool
                             stoelen.Add(stoel);
                         }
                         rijen.Add(new Rij(i, stoelen));
-                    }                  
+                    }
                 }
             }
             else
             {
                 throw new InvalidOperationException("Vak te groot!");
-            }      
+            }
         }
 
         public bool PlaatsBezoeker(Bezoeker bezoeker)
-        {    
+        {
             if (bezoeker.IsGeplaatst == true)
             {
                 return false;
             }
             foreach (var rij in rijen)
             {
-                   if (rij.IsErPlek(bezoeker) == true)
-                   {
-                      rij.PlaatsBezoeker(bezoeker, rij.RijId);
-                      AantalBezoekersInDitVak++;
-                      return true;
-                   }
+                if (rij.IsErPlek(bezoeker) == true)
+                {
+                    rij.PlaatsBezoeker(bezoeker, rij.RijId);
+                    AantalBezoekersInDitVak++;
+                    return true;
+                }
                 // check volgende rij 
             }
             return false;
@@ -78,7 +78,7 @@ namespace VisitorsPlacementTool
 
         public bool IsErPlekOpRij1(Bezoeker bezoeker)
         {
-            return rijen[0].IsErPlek(bezoeker);        
+            return rijen[0].IsErPlek(bezoeker);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VisitorsPlacementTool
+namespace Domain
 {
     public class Rij
     {
@@ -12,7 +12,7 @@ namespace VisitorsPlacementTool
         //public int AantalRijen { get; set; }
         public List<Stoel> Stoelen { get; set; }
         public int MaxStoelenPerRij { get; set; }
-       
+
 
         public Rij(int rijId, List<Stoel> aantalStoelenPerRij)
         {
@@ -23,19 +23,19 @@ namespace VisitorsPlacementTool
         }
 
         public bool IsErPlek(Bezoeker bezoeker)
-        {     
+        {
             foreach (var stoel in Stoelen)
             {
                 if (stoel.Bezoeker == null)
                 {
-                        return true;
+                    return true;
                 }
-            }           
+            }
             return false;
         }
 
         public bool PlaatsBezoeker(Bezoeker bezoeker, int rijId)
-        {          
+        {
             foreach (var stoel in Stoelen)
             {
                 if (stoel.Bezoeker == null)
@@ -50,7 +50,7 @@ namespace VisitorsPlacementTool
                         stoel.PlaatsBezoeker(bezoeker);
                         return true;
                     }
-                }            
+                }
             }
             return false;
         }
