@@ -16,9 +16,9 @@ namespace VisitorsPlacementLogic
             _bezoekerDAL = bezoekerDAL;
         }
 
-        public List<Bezoeker> MaakBezoekerTestData()
+        public List<Bezoeker> GetAllBezoekers()
         {
-            return _bezoekerDAL.MaakBezoekerTestData();
+            return _bezoekerDAL.GetAllBezoekers();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace VisitorsPlacementDAL
 {
     public class BezoekerDAL
     {
-        public List<Bezoeker> MaakBezoekerTestData()
+        public List<Bezoeker> GetAllBezoekers()
         {
             List<Bezoeker> bezoekers = new List<Bezoeker>();
             bezoekers.Add(new Bezoeker("Kind1", 11));

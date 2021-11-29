@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VisitorsPlacementTool\UI.csproj" />
     <ProjectReference Include="..\VPT_ClassLibrary\Domain.csproj" />
   </ItemGroup>
 

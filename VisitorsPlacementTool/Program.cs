@@ -13,9 +13,9 @@ namespace UI
 
         static void Main(string[] args)
         {
-            List<Bezoeker> bezoekers = _bezoekerLogic.MaakBezoekerTestData();
+            List<Bezoeker> bezoekers = _bezoekerLogic.GetAllBezoekers();
 
-            Organisatie organisatie = new Organisatie("TestOrganisatie");
+            Organisatie organisatie = new Organisatie("Organisatie");
 
             List<Vak> vakken = organisatie.MaakVakken();
 

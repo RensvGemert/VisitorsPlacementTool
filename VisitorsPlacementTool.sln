@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "VisitorsPlacementTool
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorsPlacementToolTests", "VisitorsPlacementToolTests\VisitorsPlacementToolTests.csproj", "{7D985EC4-F281-4408-827F-A44FA64DAE4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "VPT_ClassLibrary\Domain.csproj", "{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "VPT_ClassLibrary\Domain.csproj", "{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorsPlacementDAL", "VisitorsPlacementDAL\VisitorsPlacementDAL.csproj", "{5B5054BD-A550-4406-985B-03956BD82502}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorsPlacementDAL", "VisitorsPlacementDAL\VisitorsPlacementDAL.csproj", "{5B5054BD-A550-4406-985B-03956BD82502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitorsPlacementLogic", "VisitorsPlacementLogic\VisitorsPlacementLogic.csproj", "{7A6BE568-B64C-40E7-8706-095E59CCB35A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorsPlacementLogic", "VisitorsPlacementLogic\VisitorsPlacementLogic.csproj", "{7A6BE568-B64C-40E7-8706-095E59CCB35A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
