@@ -10,7 +10,7 @@ using Domain;
 namespace UI.Tests
 {
     [TestClass()]
-    public class Vak_Stoelen_Tests
+    public class Vak_BerekenAantalStoelen_Tests
     {
         [TestMethod()]
         public void BerekenAantalStoelenPerVakTest_AreEqual()
