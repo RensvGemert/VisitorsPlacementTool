@@ -1,14 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BezoekerLogicFactories\LogicFactories.csproj" />
+    <ProjectReference Include="..\LogicInterfaces\LogicInterfaces.csproj" />
     <ProjectReference Include="..\VisitorsPlacementLogic\Logic.csproj" />
-    <ProjectReference Include="..\VPT_ClassLibrary\Domain.csproj" />
   </ItemGroup>
 
 </Project>

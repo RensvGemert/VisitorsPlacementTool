@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using Domain;
-using VisitorsPlacementDAL;
-using VisitorsPlacementLogic;
+using DAL;
+using Logic;
+using LogicInterfaces;
+using LogicFactories;
 
 namespace UI
 {
     class Program
     {
-        private static BezoekerLogic _bezoekerLogic = new BezoekerLogic(new BezoekerDAL());
+        private static readonly IBezoekerLogic _bezoekerLogic = BezoekerLogicFactory.GetBezoekerLogic();
 
         static void Main(string[] args)
         {

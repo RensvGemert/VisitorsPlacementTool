@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VisitorsPlacementDAL;
+using DAL;
+using DALInterfaces;
+using LogicInterfaces;
+using DALFactories;
 
-namespace VisitorsPlacementLogic
+namespace Logic
 {
-    public class BezoekerLogic
+    public class BezoekerLogic : IBezoekerLogic
     {
-        private readonly BezoekerDAL _bezoekerDAL;
-        public BezoekerLogic(BezoekerDAL bezoekerDAL)
-        {
-            _bezoekerDAL = bezoekerDAL;
-        }
+        private readonly IBezoekerDAL _bezoekerDAL = BezoekerDALFactory.GetBezoekerDAL();
 
         public List<Bezoeker> GetAllBezoekers()
         {

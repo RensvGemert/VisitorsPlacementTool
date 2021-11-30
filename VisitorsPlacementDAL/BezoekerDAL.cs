@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DALInterfaces;
 using Domain;
 
-namespace VisitorsPlacementDAL
+namespace DAL
 {
-    public class BezoekerDAL
+    public class BezoekerDAL : IBezoekerDAL
     {
         public List<Bezoeker> GetAllBezoekers()
         {
