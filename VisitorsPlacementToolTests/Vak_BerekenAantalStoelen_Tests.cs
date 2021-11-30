@@ -17,7 +17,7 @@ namespace UI.Tests
         {
             Vak vak = new Vak("A", 3, 5);           
 
-            int resultaat = vak.BerekenAantalStoelenPerVak(3, 5);
+            int resultaat = vak.TotaalAantalStoelen;
             int verwachtResultaat = 15;
             Assert.AreEqual(verwachtResultaat, resultaat);
         }

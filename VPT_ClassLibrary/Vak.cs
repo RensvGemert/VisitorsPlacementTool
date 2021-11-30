@@ -22,13 +22,7 @@ namespace Domain
         {
             VakLetter = vakLetter;
             MaakRijen(aantalRijen, aantalStoelenPerRij);
-            BerekenAantalStoelenPerVak(aantalRijen, aantalStoelenPerRij);
-        }
-
-        public int BerekenAantalStoelenPerVak(int aantalRijen, int aantalStoelenPerRij)
-        {
             TotaalAantalStoelen = aantalRijen * aantalStoelenPerRij;
-            return TotaalAantalStoelen;
         }
 
         public void MaakRijen(int aantalRijen, int aantalStoelenPerRij)
