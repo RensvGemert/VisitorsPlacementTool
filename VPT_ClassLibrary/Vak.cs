@@ -65,7 +65,6 @@ namespace Domain
                     AantalBezoekersInDitVak++;
                     return true;
                 }
-                // check volgende rij 
             }
             return false;
         }
