@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-    class StoelLogic
+    public class StoelLogic
     {
     }
 }
