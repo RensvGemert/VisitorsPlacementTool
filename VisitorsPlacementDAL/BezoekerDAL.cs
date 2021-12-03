@@ -16,7 +16,7 @@ namespace DAL
             bezoekers.Add(new Bezoeker("Kind1", new DateTime(2014, 2, 2), new DateTime(2021, 12, 4)));
             bezoekers.Add(new Bezoeker("Kind2", new DateTime(2014, 2, 2), new DateTime(2031, 12, 2)));
             bezoekers.Add(new Bezoeker("Kind3", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
-            bezoekers.Add(new Bezoeker("Kind4", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
+            bezoekers.Add(new Bezoeker("Kind4", new DateTime(2014, 2, 2), new DateTime(2021, 11, 1)));
             bezoekers.Add(new Bezoeker("Kind5", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
             bezoekers.Add(new Bezoeker("Kind6", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
             bezoekers.Add(new Bezoeker("Kind7", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));

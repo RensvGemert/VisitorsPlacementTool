@@ -47,9 +47,9 @@ namespace Domain
             return OpTijdAangemeldeBezoekers;
         }
 
-        public List<Bezoeker> SorteerBezoekers(List<Bezoeker> OpTijdAangemeldeBezoekers)
+        public List<Bezoeker> SorteerBezoekersOpAanmeldDatum(List<Bezoeker> OpTijdAangemeldeBezoekers)
         {
-            return OpTijdAangemeldeBezoekers.OrderByDescending(x => x.IsKind()).ToList();
+            return OpTijdAangemeldeBezoekers.OrderBy(x => x.AanmeldDatum).ToList();
         }
 
         public void PlaatsBezoekers(List<Bezoeker> bezoekers, List<Vak> vakken)
