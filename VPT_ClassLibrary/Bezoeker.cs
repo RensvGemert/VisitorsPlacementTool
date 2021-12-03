@@ -15,11 +15,21 @@ namespace Domain
         public int Leeftijd { get; set; }
         private readonly int _minimumLeeftijd = 12;
 
-        public Bezoeker(string naam, DateTime geboorteDatum)
+        public Bezoeker(string naam, DateTime geboortedatum)
         {
             Naam = naam;
-            GeboorteDatum = geboorteDatum;
+            Leeftijd = GetAge(geboortedatum);
             IsGeplaatst = false;
+        }
+
+        public int GetAge(DateTime Geboortedatum)
+        {
+            var today = DateTime.Today;
+
+            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
+            var b = (Geboortedatum.Year * 100 + Geboortedatum.Month) * 100 + Geboortedatum.Day;
+
+            return (a - b) / 10000;
         }
 
         public bool IsKind()
@@ -32,16 +42,11 @@ namespace Domain
             {
                 return false;
             }
-        }
+        } 
 
-        public int GetAge(DateTime Geboortedatum)
+        public DateTime Registreer()
         {
-            var today = DateTime.Today;
-
-            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
-            var b = (Geboortedatum.Year * 100 + Geboortedatum.Month) * 100 + Geboortedatum.Day;
-
-            return (a - b) / 10000;
+            return DateTime.Now;
         }
     }
 }
