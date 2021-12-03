@@ -15,16 +15,18 @@ namespace UI
 
         static void Main(string[] args)
         {
-            List<Bezoeker> bezoekers = _bezoekerLogic.GetAllBezoekers();
-
             Organisatie organisatie = new Organisatie("Organisatie");
-
             List<Vak> vakken = organisatie.MaakVakken();
 
-            Evenement evenement = new Evenement("Parcour Eindhoven", vakken);           
+            Evenement evenement = new Evenement("Parcour Eindhoven", vakken, DateTime.Today.AddDays(-1));
             evenement.RenderDetails();
-            evenement.PlaatsBezoekers(bezoekers, vakken);
-            evenement.ToonEvenementOverzicht(vakken);
+
+            List<Bezoeker> bezoekers = _bezoekerLogic.GetAllBezoekers();
+            List<Bezoeker> OpTijdAangemeldeBezoekers = evenement.FilterOpTijdAangemeldeBezoekers(bezoekers);
+            List<Bezoeker> GesorteerdeBezoekers = evenement.SorteerBezoekers(OpTijdAangemeldeBezoekers);
+
+            evenement.PlaatsBezoekers(GesorteerdeBezoekers, vakken);
+            evenement.ToonEvenementOverzicht(vakken); 
         }
     }
 }

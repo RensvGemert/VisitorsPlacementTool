@@ -14,12 +14,14 @@ namespace Domain
         public bool IsGeplaatst = false;
         public int Leeftijd { get; set; }
         private readonly int _minimumLeeftijd = 12;
+        public DateTime AanmeldDatum { get; set; }
 
-        public Bezoeker(string naam, DateTime geboortedatum)
+        public Bezoeker(string naam, DateTime geboortedatum, DateTime aanmeldDatum)
         {
             Naam = naam;
             Leeftijd = GetAge(geboortedatum);
             IsGeplaatst = false;
+            AanmeldDatum = aanmeldDatum;
         }
 
         public int GetAge(DateTime Geboortedatum)
@@ -44,9 +46,9 @@ namespace Domain
             }
         } 
 
-        public DateTime Registreer()
+        public void TeLaatVoorEvenement()
         {
-            return DateTime.Now;
+            Console.WriteLine("Helaas " + Naam + " u bent te laat, u kunt zich niet meer aanmelden voor dit evenement!\n");
         }
     }
 }
