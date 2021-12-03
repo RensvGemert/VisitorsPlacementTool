@@ -23,7 +23,7 @@ namespace UI
 
             List<Bezoeker> bezoekers = _bezoekerLogic.GetAllBezoekers();
             List<Bezoeker> OpTijdAangemeldeBezoekers = evenement.FilterOpTijdAangemeldeBezoekers(bezoekers);
-            List<Bezoeker> GesorteerdeBezoekers = evenement.SorteerBezoekersOpAanmeldDatum(OpTijdAangemeldeBezoekers);
+            List<Bezoeker> GesorteerdeBezoekers = evenement.SorteerBezoekers(OpTijdAangemeldeBezoekers);
 
             evenement.PlaatsBezoekers(GesorteerdeBezoekers, vakken);
             evenement.ToonEvenementOverzicht(vakken); 
