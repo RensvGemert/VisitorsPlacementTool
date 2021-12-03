@@ -31,10 +31,10 @@ namespace DAL
             bezoekers.Add(new Bezoeker("Volwassenen6", new DateTime(2002, 2, 2), new DateTime(2021, 12, 2)));
             bezoekers.Add(new Bezoeker("Volwassenen7", new DateTime(2002, 2, 2), new DateTime(2021, 12, 2)));
             bezoekers.Add(new Bezoeker("Volwassenen8", new DateTime(2002, 2, 2), new DateTime(2021, 12, 2)));
-            bezoekers.Add(new Bezoeker("Kind11", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
-            bezoekers.Add(new Bezoeker("Kind12", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
-            bezoekers.Add(new Bezoeker("Kind13", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
-            bezoekers.Add(new Bezoeker("Kind14", new DateTime(2014, 2, 2), new DateTime(2021, 12, 2)));
+            bezoekers.Add(new Bezoeker("Kind11", new DateTime(2014, 2, 1), new DateTime(2021, 12, 2)));
+            bezoekers.Add(new Bezoeker("Kind12", new DateTime(2014, 2, 1), new DateTime(2021, 12, 2)));
+            bezoekers.Add(new Bezoeker("Kind13", new DateTime(2014, 2, 1), new DateTime(2021, 12, 2)));
+            bezoekers.Add(new Bezoeker("Kind14", new DateTime(2014, 2, 1), new DateTime(2021, 12, 2)));
             bezoekers.Add(new Bezoeker("Volwassene9", new DateTime(2002, 2, 2), new DateTime(2021, 12, 2)));
             bezoekers.Add(new Bezoeker("Volwassenen10", new DateTime(2002, 2, 2), new DateTime(2021, 12, 2)));
             bezoekers.Add(new Bezoeker("Volwassenen11", new DateTime(2002, 2, 2), new DateTime(2021, 12, 2)));

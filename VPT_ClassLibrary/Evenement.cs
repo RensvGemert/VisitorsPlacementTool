@@ -49,7 +49,8 @@ namespace Domain
 
         public List<Bezoeker> SorteerBezoekersOpAanmeldDatum(List<Bezoeker> OpTijdAangemeldeBezoekers)
         {
-            return OpTijdAangemeldeBezoekers.OrderBy(x => x.AanmeldDatum).ToList();
+            List<Bezoeker> gesorteerOpAanmeldDatum = OpTijdAangemeldeBezoekers.OrderBy(x => x.AanmeldDatum).ToList();
+            return gesorteerOpAanmeldDatum.OrderByDescending(x => x.IsKind()).ToList();
         }
 
         public void PlaatsBezoekers(List<Bezoeker> bezoekers, List<Vak> vakken)
@@ -69,7 +70,7 @@ namespace Domain
                 }
                 if (!bezoeker.IsGeplaatst)
                 {
-                    //EvenementVolBericht(bezoeker);
+                    EvenementVolBericht(bezoeker);
                 }
             }
         }
