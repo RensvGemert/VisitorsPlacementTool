@@ -14,10 +14,10 @@ namespace Domain.Tests
         [TestMethod()]
         public void IsErPlekOpRij1Test_IsTrue()
         {
-            Bezoeker bezoeker1 = new Bezoeker("bezoeker01", 11);
-            Bezoeker bezoeker2 = new Bezoeker("bezoeker02", 12);
-            Bezoeker bezoeker3 = new Bezoeker("bezoeker03", 11);
-           
+            Bezoeker bezoeker1 = new Bezoeker("bezoeker01", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker2 = new Bezoeker("bezoeker02", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker3 = new Bezoeker("bezoeker03", new DateTime(2015, 1, 1), DateTime.Today);
+
             Vak vak = new Vak("A", 1, 3);
             vak.PlaatsBezoeker(bezoeker1);
             vak.PlaatsBezoeker(bezoeker2);
@@ -28,10 +28,10 @@ namespace Domain.Tests
         [TestMethod()]
         public void IsErPlekOpRij1Test_IsFalse()
         {
-            Bezoeker bezoeker1 = new Bezoeker("bezoeker01", 23);
-            Bezoeker bezoeker2 = new Bezoeker("bezoeker02", 12);
-            Bezoeker bezoeker3 = new Bezoeker("bezoeker03", 11);
-            Bezoeker bezoeker4 = new Bezoeker("bezoeker03", 22);
+            Bezoeker bezoeker1 = new Bezoeker("bezoeker01", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker2 = new Bezoeker("bezoeker02", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker3 = new Bezoeker("bezoeker03", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker4 = new Bezoeker("bezoeker03", new DateTime(2015, 1, 1), DateTime.Today);
 
             Vak vak = new Vak("A", 1, 3);
             vak.PlaatsBezoeker(bezoeker1);

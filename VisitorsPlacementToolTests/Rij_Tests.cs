@@ -15,7 +15,7 @@ namespace UI.Tests
         [TestMethod()]
         public void IsErPlekTest_IsTrue()
         {
-            Bezoeker bezoeker = new Bezoeker("Rens", 23);
+            Bezoeker bezoeker = new Bezoeker("Rens", new DateTime(1998, 6, 1), DateTime.Today);
             List<Stoel> stoelen = new List<Stoel>();
             stoelen.Add(new Stoel("stoel1"));
 
@@ -28,7 +28,7 @@ namespace UI.Tests
         [TestMethod()]
         public void IsErPlekTest_IsFalse()
         {
-            Bezoeker testBezoeker = new Bezoeker("TestBezoeker", 22);
+            Bezoeker testBezoeker = new Bezoeker("TestBezoeker", new DateTime(1998, 6, 1), DateTime.Today);
             List<Stoel> stoelen = new List<Stoel>();
             stoelen.Add(new Stoel("stoel1"));
             foreach (var stoel in stoelen)
@@ -47,9 +47,9 @@ namespace UI.Tests
         public void PlaatsBezoekerTest_IsTrue()
         {
             // arrange
-            Bezoeker bezoeker01 = new Bezoeker("TestBezoeker01", 12);
-            Bezoeker bezoeker02 = new Bezoeker("TestBezoeker02", 12);
-            Bezoeker bezoeker03 = new Bezoeker("TestBezoeker03", 12);
+            Bezoeker bezoeker01 = new Bezoeker("TestBezoeker01", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker02 = new Bezoeker("TestBezoeker02", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker03 = new Bezoeker("TestBezoeker03", new DateTime(2015, 1, 1), DateTime.Today);
             List<Stoel> stoelen = new List<Stoel>();
             stoelen.Add(new Stoel("A1-1"));
             stoelen.Add(new Stoel("A1-2"));
@@ -67,9 +67,9 @@ namespace UI.Tests
         public void PlaatsBezoekerTest_IsFalse()
         {
             // arrange
-            Bezoeker bezoeker01 = new Bezoeker("TestBezoeker01", 12);
-            Bezoeker bezoeker02 = new Bezoeker("TestBezoeker02", 12);
-            Bezoeker bezoeker03 = new Bezoeker("TestBezoeker03", 12);
+            Bezoeker bezoeker01 = new Bezoeker("TestBezoeker01", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker02 = new Bezoeker("TestBezoeker02", new DateTime(2015, 1, 1), DateTime.Today);
+            Bezoeker bezoeker03 = new Bezoeker("TestBezoeker03", new DateTime(2015, 1, 1), DateTime.Today);
             List<Stoel> stoelen = new List<Stoel>();
             stoelen.Add(new Stoel("A1-1"));
             stoelen.Add(new Stoel("A1-2"));

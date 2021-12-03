@@ -14,7 +14,7 @@ namespace Domain.Tests
         [TestMethod()]
         public void PlaatsBezoekerTest()
         {
-            Bezoeker bezoeker1 = new Bezoeker("bezoeker01", 23);
+            Bezoeker bezoeker1 = new Bezoeker("bezoeker01", new DateTime(2015, 1, 1), DateTime.Today);
             Vak vak = new Vak("A", 1, 3);
             vak.PlaatsBezoeker(bezoeker1);
 

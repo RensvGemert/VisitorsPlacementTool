@@ -21,7 +21,7 @@ namespace UI.Tests
             vakken.Add(vakA);
             vakken.Add(vakB);
 
-            Evenement evenement = new Evenement("Parcour Eindhoven", vakken);
+            Evenement evenement = new Evenement("Parcour Eindhoven", vakken, DateTime.Today);
             int verwachtResultaat = 30;
             int resultaat = evenement.BerekenMaxAantalBezoekers(vakken);
 
@@ -37,7 +37,7 @@ namespace UI.Tests
             vakken.Add(vakA);
             vakken.Add(vakB);
 
-            Evenement evenement = new Evenement("Parcour Eindhoven", vakken);
+            Evenement evenement = new Evenement("Parcour Eindhoven", vakken, DateTime.Today);
             int foutResultaat = 1;
             int resultaat = evenement.BerekenMaxAantalBezoekers(vakken);
 
@@ -48,8 +48,8 @@ namespace UI.Tests
         public void PlaatsBezoekersTest_AreEqual()
         {
             List<Bezoeker> bezoekers = new List<Bezoeker>();
-            bezoekers.Add(new Bezoeker("TestBezoeker01", 21));
-            bezoekers.Add(new Bezoeker("TestBezoeker02", 22));
+            bezoekers.Add(new Bezoeker("TestBezoeker01", new DateTime(2015, 1, 1), DateTime.Today));
+            bezoekers.Add(new Bezoeker("TestBezoeker02", new DateTime(2015, 1, 1), DateTime.Today));
 
             List<Vak> vakken = new List<Vak>();
             Vak VakA = new Vak("A", 1, 5);
@@ -60,7 +60,7 @@ namespace UI.Tests
             vakken.Add(VakC);
 
 
-            Evenement evenement = new Evenement("TestEvenement", vakken);
+            Evenement evenement = new Evenement("TestEvenement", vakken, DateTime.Today);
             evenement.PlaatsBezoekers(bezoekers, vakken);
 
             int resultaat = VakA.AantalBezoekersInDitVak;
@@ -73,8 +73,8 @@ namespace UI.Tests
         public void PlaatsBezoekersTest_AreNotEqual()
         {
             List<Bezoeker> bezoekers = new List<Bezoeker>();
-            bezoekers.Add(new Bezoeker("TestBezoeker01", 21));
-            bezoekers.Add(new Bezoeker("TestBezoeker02", 22));
+            bezoekers.Add(new Bezoeker("TestBezoeker01", new DateTime(2015, 1, 1), DateTime.Today));
+            bezoekers.Add(new Bezoeker("TestBezoeker02", new DateTime(2015, 1, 1), DateTime.Today));
 
             List<Vak> vakken = new List<Vak>();
             Vak VakA = new Vak("A", 1, 5);
@@ -85,7 +85,7 @@ namespace UI.Tests
             vakken.Add(VakC);
 
 
-            Evenement evenement = new Evenement("TestEvenement", vakken);
+            Evenement evenement = new Evenement("TestEvenement", vakken, DateTime.Today);
             evenement.PlaatsBezoekers(bezoekers, vakken);
 
             int resultaat = VakA.AantalBezoekersInDitVak;

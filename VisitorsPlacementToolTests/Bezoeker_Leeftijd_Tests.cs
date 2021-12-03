@@ -15,7 +15,7 @@ namespace UI.Tests
         [TestMethod()]
         public void CheckIsKind_Is_False()
         {
-            Bezoeker bezoeker = new Bezoeker("Rens", 13);
+            Bezoeker bezoeker = new Bezoeker("Rens", new DateTime(1998, 6, 1), DateTime.Today);
 
             bool isKind = bezoeker.IsKind();
 
@@ -25,7 +25,7 @@ namespace UI.Tests
         [TestMethod()]
         public void CheckIsKind_Is_True()
         {
-            Bezoeker bezoeker = new Bezoeker("Rens", 12);
+            Bezoeker bezoeker = new Bezoeker("Rens", new DateTime(2015, 1, 1), DateTime.Today);
 
             bool isKind = bezoeker.IsKind();
 
