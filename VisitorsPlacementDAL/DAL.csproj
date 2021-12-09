@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DALInterfaces\DALInterfaces.csproj" />
-    <ProjectReference Include="..\VPT_ClassLibrary\Domain.csproj" />
+    <ProjectReference Include="..\VPT_ClassLibrary\Logic.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain;
+using Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Tests
+namespace Logic.Tests
 {
     [TestClass()]
     public class Evenement_FilterOpTijdAangemeldeBezoekers_Tests

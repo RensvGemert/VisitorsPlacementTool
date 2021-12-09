@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LogicInterfaces\LogicInterfaces.csproj" />
-    <ProjectReference Include="..\VisitorsPlacementLogic\Logic.csproj" />
   </ItemGroup>
 
 </Project>

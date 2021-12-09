@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Domain;
-using DAL;
+using DALFactories;
+using DALInterfaces;
 using Logic;
-using LogicInterfaces;
-using LogicFactories;
 
 namespace UI
 {
     class Program
     {
-        private static readonly IBezoekerLogic _bezoekerLogic = BezoekerLogicFactory.GetBezoekerLogic();
+        private static readonly IBezoekerDAL _bezoekerLogic = BezoekerDALFactory.GetBezoekerDAL();
 
         static void Main(string[] args)
         {

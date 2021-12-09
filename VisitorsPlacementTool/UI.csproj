@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BezoekerLogicFactories\LogicFactories.csproj" />
-    <ProjectReference Include="..\VisitorsPlacementLogic\Logic.csproj" />
-    <ProjectReference Include="..\VPT_ClassLibrary\Domain.csproj" />
+    <ProjectReference Include="..\DALInterfaces\DALInterfaces.csproj" />
+    <ProjectReference Include="..\Factories\DALFactories.csproj" />
+    <ProjectReference Include="..\VPT_ClassLibrary\Logic.csproj" />
   </ItemGroup>
 
 </Project>

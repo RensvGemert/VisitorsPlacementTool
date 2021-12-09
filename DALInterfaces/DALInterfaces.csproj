@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VPT_ClassLibrary\Domain.csproj" />
+    <ProjectReference Include="..\VPT_ClassLibrary\Logic.csproj" />
   </ItemGroup>
 
 </Project>

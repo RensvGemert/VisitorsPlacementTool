@@ -7,19 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "VisitorsPlacementTool
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorsPlacementToolTests", "VisitorsPlacementToolTests\VisitorsPlacementToolTests.csproj", "{7D985EC4-F281-4408-827F-A44FA64DAE4D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "VPT_ClassLibrary\Domain.csproj", "{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "VPT_ClassLibrary\Logic.csproj", "{B01A8CE9-8C54-4FC1-8C3C-C4F14B9AA08C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "VisitorsPlacementDAL\DAL.csproj", "{5B5054BD-A550-4406-985B-03956BD82502}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "VisitorsPlacementLogic\Logic.csproj", "{7A6BE568-B64C-40E7-8706-095E59CCB35A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DALInterfaces", "DALInterfaces\DALInterfaces.csproj", "{ADB4B3F1-9F17-4D88-8F25-469DC57B0EBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALInterfaces", "DALInterfaces\DALInterfaces.csproj", "{ADB4B3F1-9F17-4D88-8F25-469DC57B0EBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicInterfaces", "LogicInterfaces\LogicInterfaces.csproj", "{1F11D911-94E4-419B-BEB7-AEC0482017D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicInterfaces", "LogicInterfaces\LogicInterfaces.csproj", "{1F11D911-94E4-419B-BEB7-AEC0482017D7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALFactories", "Factories\DALFactories.csproj", "{36852D53-B4ED-4D55-83E5-307B911EF716}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicFactories", "BezoekerLogicFactories\LogicFactories.csproj", "{6939F151-4BC4-4C26-A0A7-D7FA0764BA49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DALFactories", "Factories\DALFactories.csproj", "{36852D53-B4ED-4D55-83E5-307B911EF716}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +39,6 @@ Global
 		{5B5054BD-A550-4406-985B-03956BD82502}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5054BD-A550-4406-985B-03956BD82502}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B5054BD-A550-4406-985B-03956BD82502}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A6BE568-B64C-40E7-8706-095E59CCB35A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ADB4B3F1-9F17-4D88-8F25-469DC57B0EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ADB4B3F1-9F17-4D88-8F25-469DC57B0EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADB4B3F1-9F17-4D88-8F25-469DC57B0EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,10 +51,6 @@ Global
 		{36852D53-B4ED-4D55-83E5-307B911EF716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36852D53-B4ED-4D55-83E5-307B911EF716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36852D53-B4ED-4D55-83E5-307B911EF716}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6939F151-4BC4-4C26-A0A7-D7FA0764BA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6939F151-4BC4-4C26-A0A7-D7FA0764BA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6939F151-4BC4-4C26-A0A7-D7FA0764BA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6939F151-4BC4-4C26-A0A7-D7FA0764BA49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
