@@ -21,6 +21,7 @@ namespace Logic
             Vakken.Add(new Vak("A", 3, 3));
             Vakken.Add(new Vak("B", 1, 3));
             Vakken.Add(new Vak("C", 3, 3));
+            Vakken.Add(new Vak("D", 3, 3));
             return Vakken;
         }
     }
