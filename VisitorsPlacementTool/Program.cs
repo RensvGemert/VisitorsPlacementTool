@@ -9,7 +9,7 @@ namespace UI
 {
     class Program
     {
-        private static readonly IBezoekerDAL _bezoekerLogic = BezoekerDALFactory.GetBezoekerDAL();
+        private static readonly IBezoekerDAL _bezoekerDAL = BezoekerDALFactory.GetBezoekerDAL();
 
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace UI
             Evenement evenement = new Evenement("Parcour Eindhoven", vakken, DateTime.Today.AddDays(-1));
             evenement.RenderDetails();
 
-            List<Bezoeker> bezoekers = _bezoekerLogic.GetAllBezoekers();
+            List<Bezoeker> bezoekers = _bezoekerDAL.GetAllBezoekers();
             List<Bezoeker> OpTijdAangemeldeBezoekers = evenement.FilterOpTijdAangemeldeBezoekers(bezoekers);
             List<Bezoeker> GesorteerdeBezoekers = evenement.SorteerBezoekers(OpTijdAangemeldeBezoekers);
 
