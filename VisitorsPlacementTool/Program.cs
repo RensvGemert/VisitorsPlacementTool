@@ -17,14 +17,15 @@ namespace UI
             List<Vak> vakken = organisatie.MaakVakken();
 
             Evenement evenement = new Evenement("Parcour Eindhoven", vakken, DateTime.Today.AddDays(-1));
-            evenement.RenderDetails();
 
             List<Bezoeker> bezoekers = _bezoekerDAL.GetAllBezoekers();
             List<Bezoeker> OpTijdAangemeldeBezoekers = evenement.FilterOpTijdAangemeldeBezoekers(bezoekers);
             List<Bezoeker> GesorteerdeBezoekers = evenement.SorteerBezoekers(OpTijdAangemeldeBezoekers);
 
+            organisatie.GeefAangemeldeBezoekersEenId(GesorteerdeBezoekers);
+
             evenement.PlaatsBezoekers(GesorteerdeBezoekers, vakken);
-            evenement.ToonEvenementOverzicht(vakken); 
+            evenement.ToonEvenementOverzicht(vakken);
         }
     }
 }

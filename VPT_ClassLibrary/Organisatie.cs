@@ -24,5 +24,16 @@ namespace Logic
             Vakken.Add(new Vak("D", 3, 3));
             return Vakken;
         }
+
+        public void GeefAangemeldeBezoekersEenId(List<Bezoeker> bezoekers)
+        {
+            int id = 0;
+            for (int i = 0; i < bezoekers.Count; i++)
+            {
+                id += 1;
+                bezoekers[i].Id += id;
+            }
+        }
+
     }
 }

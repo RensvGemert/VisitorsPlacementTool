@@ -77,6 +77,7 @@ namespace Logic
 
         public void ToonEvenementOverzicht(List<Vak> vakken)
         {
+            RenderDetails();
             foreach (var vak in vakken)
             {
                 Console.WriteLine("Vak: " + vak.VakLetter);

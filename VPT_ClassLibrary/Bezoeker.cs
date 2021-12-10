@@ -8,6 +8,7 @@ namespace Logic
 {
     public class Bezoeker
     {
+        public int Id { get; set; }
         public string Naam { get; set; }
         public DateTime GeboorteDatum { get; set; }
 
