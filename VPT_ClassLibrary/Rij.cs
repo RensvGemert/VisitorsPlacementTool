@@ -9,10 +9,8 @@ namespace Logic
     public class Rij
     {
         public int RijId { get; set; }
-        //public int AantalRijen { get; set; }
         public List<Stoel> Stoelen { get; set; }
         public int MaxStoelenPerRij { get; set; }
-
 
         public Rij(int rijId, List<Stoel> aantalStoelenPerRij)
         {
